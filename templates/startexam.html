@@ -1,0 +1,393 @@
+<html>
+<head>
+{% load static %}
+
+</head>
+<body style=" margin:0px; padding:0px; background-color:#ffffff; font-family:Arial, Helvetica, sans-serif; font-size:10pt;position: fixed;height:100%;width:100%" onunload="return onBrowserClose();" onbeforeunload="return onBrowserClose();" data-gr-c-s-loaded="true">
+
+<div style="width:100%; margin:0 auto;">
+
+<div style="width:auto; background:url(https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/test/header.gif) repeat-x; overflow:hidden; padding:10px 0 15px 0px;">
+<div style="float:left; color:#345895; font-family:Levenim MT; font-size:22px; margin:0px 0 0 0px; padding:10px 0 0 50px; text-transform:uppercase; font-weight:bold;width:100%">Made Easy</div>
+</div>
+</div>
+<div style="float:left; background-color:#FFF; margin:0px 0px;left:0px; right:150px;position: absolute;top:66px;bottom:0px;">
+
+<div style="position:absolute;bottom:95px;top:0px; text-align:justify; line-height:16pt; padding:0 15px 0px 15px; border-top:1px #f0f0f0 solid; border-left:1px #f0f0f0 solid; border-right:1px #f0f0f0 solid; margin:0 0px; overflow:auto;">
+
+<div style="width:auto;display:none; border-top:1px #d8d9db solid; border-bottom:1px #d8d9db solid; border-left:1px #d8d9db solid;">
+
+<table width="100%" cellpadding="10px" cellspacing="0px" align="center" id="table-coloumn">
+
+<tbody><tr>
+<td width="15%" valign="middle" align="center" class="coloumn-black">Category</td>
+<td width="15%" valign="middle" align="center" class="coloumn-black">Package Name</td>
+<td width="15%" valign="middle" align="center" class="coloumn-black">Test Code</td>
+<td width="15%" valign="middle" align="center" class="coloumn-black">Subject Name</td>
+<td width="15%" valign="middle" align="center" class="coloumn-black">Total Questions</td>
+<td width="15%" valign="middle" align="center" class="coloumn-black">Total Time</td>
+<td width="10%" valign="middle" align="center" class="coloumn-black">Maximum Marks</td>
+</tr>
+
+
+<tr>
+<td width="15%" valign="middle" align="center" class="coloumn-gray"></td>
+<td width="15%" valign="middle" align="center" class="coloumn-gray"></td>
+<td width="15%" valign="middle" align="center" class="coloumn-gray"></td>
+<td width="15%" valign="middle" align="center" class="coloumn-gray"></td>
+<td width="15%" valign="middle" align="center" class="coloumn-gray"></td>
+<td width="15%" valign="middle" align="center" class="coloumn-gray"> min</td>
+<td width="10%" valign="middle" align="center" class="coloumn-gray"></td>
+</tr>
+
+
+<tr>
+<td width="15%" valign="middle" align="center" class="coloumn-black" style="border-top:1px #d8d9db solid;">Topics</td>
+<td width="15%" valign="middle" class="coloumn-gray" colspan="6" style="padding:0 0 0 20px;"></td>
+</tr>
+
+</tbody></table>
+
+</div>
+
+
+<div style="width:auto;">
+<div>
+<p align="CENTER" style="margin-bottom: 0in; line-height: 0.22in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="4"><b>General Instructions</b></font></font></font></p>
+<ol>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.17in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">The clock will be set at the server. The countdown timer at the right corner of the screen will display the remaining time available for you to complete the examination. When the timer reaches zero the examination ends by itself. You need to terminate the examination or submit the paper.</font></font></font></p>
+</li>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.17in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">The question palette displayed on the right side of the screen will show the status of each question using one of the following symbols:</font></font></font></p>
+<br>
+<table border="0" cellpadding="5" cellspacing="0" style="font-size:13px" width="597">
+<colgroup>
+<col width="6">
+<col width="570">
+</colgroup>
+<tbody>
+<tr>
+<td class="insnotVisited" style="text-align:center;width:32px">
+0</td>
+<td width="570">
+<p>
+<font face="Century Gothic, serif">You have not visited the question yet.</font></p>
+</td>
+</tr>
+<tr>
+<td class="insunattempt" style="text-align:center">
+0</td>
+<td width="570">
+<p>
+<font face="Century Gothic, serif">You have not answered the question.</font></p>
+</td>
+</tr>
+<tr>
+<td class="insattempt" style="text-align:center;">
+0</td>
+<td width="570">
+<p>
+<font face="Century Gothic, serif">You have answered the question.</font></p>
+</td>
+</tr>
+<tr>
+<td class="insmark" style="text-align:center">
+0</td>
+<td width="570">
+<p>
+<font face="Century Gothic, serif">You have NOT answered the question, but have marked the question for review.</font></p>
+</td>
+</tr>
+<tr>
+<td class="insmarkReview" style="text-align:center;height:40px">
+0</td>
+<td width="570">
+<p>
+<font face="Century Gothic, serif">You have answered the question, but marked it for review.</font></p>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.17in">
+<font face="Century Gothic, serif"><font size="2">The Marked for Review status for a question simply indicates that you would like to look at that question again.</font></font><font face="Century Gothic, serif"><font size="2">&nbsp;</font></font><font face="Century Gothic, serif"><font size="2">If a question is answered, but marked for review, then the answer to that question will be considered in the evaluation, unless the status is modified by the candidate.</font></font></p>
+</li>
+</ol>
+<p align="JUSTIFY" style="margin-bottom: 0in; line-height: 0.22in">
+<font color="#c00000"><font face="Century Gothic, serif"><font size="2"><b>Navigating to a Question</b></font></font></font></p>
+<ol start="4">
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.17in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">To answer a question, do the following:</font></font></font></p>
+<ul>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">Click on the question number in the Question Palette to go to that question directly.</font></font></font></p>
+</li>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">Select an answer for a multiple choice type question by clicking on bubble placed before the 4 choices A, B, C, D. Use the virtual numeric keypad to enter a number as an answer to a numerical type question.</font></font></font></p>
+</li>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">Click on</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">&nbsp;</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2"><b>Save and Next</b></font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">&nbsp;</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">to save your answer for the current question and then go to the next question.</font></font></font></p>
+</li>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">Click on</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">&nbsp;</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2"><b>Mark for Review and Next</b></font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">&nbsp;</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">to save your answer for the current question, mark it for review, and then go to the next question.</font></font></font></p>
+</li>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font face="Century Gothic, serif"><font size="2">Caution: Note that your answer for the current question will not be saved, if you navigate to another question directly by clicking on its question number.</font></font></p>
+</li>
+</ul>
+</li>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.17in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">You can view all the questions by clicking on the</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">&nbsp;</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2"><b>Question Paper</b></font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">&nbsp;</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">button. This feature is provided so that you can see the entire question paper at a glance. Note that the options for multiple choice type questions will not be shown.</font></font></font></p>
+</li>
+</ol>
+<p align="JUSTIFY" style="margin-bottom: 0in; line-height: 0.22in">
+<font color="#c00000"><font face="Century Gothic, serif"><font size="2"><b>Answering a Question</b></font></font></font></p>
+<ol start="6">
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.17in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">Procedure for answering a multiple choice type question:</font></font></font></p>
+<ul>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">To select your answer, click on the button of one of the options A, B, C, D</font></font></font></p>
+</li>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">To deselect your chosen answer, click on the button of the chosen option again or click on the</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">&nbsp;</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2"><b>Clear Response button</b></font></font></font></p>
+</li>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">To change your chosen answer, click on the button of another option</font></font></font></p>
+</li>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">To save your answer, you MUST click on the</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">&nbsp;</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2"><b>Save &amp; Next</b></font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">&nbsp;</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">button</font></font></font></p>
+</li>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">To mark the question for review, click on the</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">&nbsp;</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2"><b>Mark for Review &amp; Next</b></font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">&nbsp;</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">button.</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">&nbsp;</font></font></font><font face="Century Gothic, serif"><font size="2">If an answer is selected for a question that is </font></font><font face="Century Gothic, serif"><font size="2"><b>Marked for Review</b></font></font><font face="Century Gothic, serif"><font size="2">, that answer will be considered in the evaluation.</font></font></p>
+</li>
+</ul>
+</li>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.17in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">Procedure for answering a numerical answer type question:</font></font></font></p>
+</li>
+</ol>
+<ol type="a">
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">To enter a number as your answer, use the virtual numerical keypad</font></font></font></p>
+</li>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2"><b>In Numerical Type Questions, you are limited to answer till two decimal points.</b></font></font></font></p>
+</li>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">A fraction (eg. -0.3 or -.3) can be entered as an answer with or without "0" before the decimal point</font></font></font></p>
+</li>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">To clear your answer, click on the</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">&nbsp;</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2"><b>Clear Response</b></font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">&nbsp;</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">button</font></font></font></p>
+<ol type="a">
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">To save your answer, you MUST click on the</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">&nbsp;</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2"><b>Save &amp; Next</b></font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">&nbsp;</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">button</font></font></font></p>
+</li>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">To mark the question for review, click on the</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">&nbsp;</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2"><b>Mark for Review and Next</b></font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">&nbsp;</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">button.</font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2">&nbsp;</font></font></font><font face="Century Gothic, serif"><font size="2">If an answer is entered for a question that is </font></font><font face="Century Gothic, serif"><font size="2"><b>Marked for Review</b></font></font><font face="Century Gothic, serif"><font size="2">, that answer will be considered in the evaluation.</font></font></p>
+</li>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">To change your answer to a question that has already been answered, first select that question for answering and then follow the procedure for answering that type of question.</font></font></font></p>
+</li>
+<li>
+<p align="JUSTIFY" style="margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">Note that ONLY Questions for which answers are saved or </font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2"><b>MARKED FOR REVIEW</b></font></font></font><font color="#000000"><font face="Century Gothic, serif"><font size="2"> after answering will be considered for evaluation</font></font></font></p>
+</li>
+</ol>
+</li>
+</ol>
+<p align="JUSTIFY" style="margin-left: 0.53in; margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<br>
+&nbsp;</p>
+<p align="JUSTIFY" style="margin-left: 0.53in; margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#c00000"><font face="Century Gothic, serif"><font size="2"><b>8. Sections</b></font></font></font></p>
+<p align="JUSTIFY" style="margin-left: 0.53in; text-indent: -0.22in; margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">a. Sections in the question paper will be displayed in the top bar of the screen. Questions in a section can be viewed by clicking on the name of that Section. The Section you are currently viewing will be highlighted</font></font></font></p>
+<p align="JUSTIFY" style="margin-left: 0.53in; text-indent: -0.22in; margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">b. After clicking on Save &amp; the Next button for the last question in a Section, you will be automatically taken to the first question of the next Section in a sequence.</font></font></font></p>
+<p align="JUSTIFY" style="margin-left: 0.53in; text-indent: -0.22in; margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">c. You can move the mouse cursor over the name of the Section to view the answering status of that Section.</font></font></font></p>
+<p align="JUSTIFY" style="margin-left: 0.53in; text-indent: -0.22in; margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">d. You can shuffle between different Sections or change the optional Sections any number of times.</font></font></font></p>
+<p align="JUSTIFY" style="margin-left: 0.53in; margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<br>
+&nbsp;</p>
+<p align="JUSTIFY" style="margin-left: 0.53in; margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#c00000"><font face="Century Gothic, serif"><font size="2"><b>9. Calculators</b></font></font></font></p>
+<p align="JUSTIFY" style="margin-left: 0.53in; margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">Online Scientific Calculators will be available in GATE Online Test Platform.</font></font></font></p>
+<p align="JUSTIFY" style="margin-left: 0.53in; margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<br>
+&nbsp;</p>
+<p align="JUSTIFY" style="margin-left: 0.53in; margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#c00000"><font face="Century Gothic, serif"><font size="2"><b>Disclaimer:</b></font></font></font></p>
+<p align="JUSTIFY" style="margin-left: 0.53in; margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">This Online Test Series is designed by studying and surveying the previous platforms of the respective examinations. And efforts are made to replicate the actual exam patterns in all the aspects. However MADE EASY will not be responsible for any changes in exam pattern or functionality updates in the actual examinations.</font></font></font></p>
+<p align="JUSTIFY" style="margin-left: 0.53in; margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<br>
+&nbsp;</p>
+<p align="JUSTIFY" style="margin-left: 0.53in; margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#c00000"><font face="Century Gothic, serif"><font size="2"><b>Declaration:</b></font></font></font></p>
+<p align="JUSTIFY" style="margin-left: 0.53in; margin-top: 0.05in; margin-bottom: 0.05in; line-height: 0.15in">
+<font color="#000000"><font face="Century Gothic, serif"><font size="2">I have read and understood all the above mentioned instructions. Also, I confirm that at the start of the examination all the computer hardware and internet connection are in proper working condition.</font></font></font></p>
+</div> </div>
+
+</div>
+<script>
+                //  window.close();
+            </script>
+<form name="instructionForm" method="post" action="" onsubmit="return generateTest();">
+
+
+<div style="width:auto; right:0px;left:0px;position:absolute;background-color:#e8e9e9;  border:1px #dddddd solid; border-radius:0px 0px 4px 4px ; -webkit-border-radius:0px 0px 4px 4px ; overflow:hidden; padding:7px 0 7px 0px;bottom:40px;height:40px;">
+
+<div id="condition" style=" float:left;  margin:5px 0 0 17px; color:#F00; font-size:12px; font-weight:normal; vertical-align:top; width:70%;">
+<label style="cursor:pointer">
+<input name="" id="termcondition" align="top" onclick="checkCondition()" type="checkbox" value="" style="margin:2px 8px 0 0px;  vertical-align:top;" checked="checked">
+&nbsp;I have read and understood the instructions. I agree that in case of not adhering to the exam instructions, I will be disqualified from giving the exam.
+</label>
+</div>
+
+<div class="submit" id="chaclass">
+<input name="" id="startTest" type="button" value="Start Test" onclick="generateTest();" class="submit-button">
+</div><div class="pleloaderline">
+<img src="student/images/preloader-dots.gif" alt="" id="pleloderline" width="94px" style="  padding: 5px 0;display:none">
+</div>
+</div>
+
+<span id="defaultCountdown" class="countdown"></span>
+<input type="hidden" name="testID" value="7">
+<input type="hidden" name="duration" value="10800">
+<input type="hidden" name="attemptedSerialNo" value="">
+<input type="hidden" name="reviewSerialNo" value="">
+<input type="hidden" name="serialNo" value="1">
+<input type="hidden" name="response" value="">
+<input type="hidden" name="timediff" value="0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0">
+<input type="hidden" name="testType" value="2">
+<input type="hidden" name="subjectNames" value="General Aptitude,Technical">
+<input type="hidden" name="subjectID" value="7,1">
+<input type="hidden" name="maxSerialNo" value="1,11">
+<input type="hidden" name="totalQuestion" value="65">
+<input type="hidden" name="selectedSubjectID" value="7">
+<input type="hidden" name="selecedSubjectName" value="General Aptitude">
+<input type="hidden" name="correctAnswer" value="">
+<input type="hidden" name="testTitle" value="Made Easy">
+<input type="hidden" name="testPattern" value="1" <="" input="">
+<input type="hidden" name="section" value="13">
+<input type="hidden" name="testQuestionNo" value="771#773#777#782#208#791#800#803#805#213#15479#15484#15510#15517#15526#15530#15534#15542#15545#15548#15553#15561#15566#15569#15572#5485#5488#5494#5495#5498#5505#5514#5521#5524#5526#15596#15600#15607#15609#15611#15615#15616#15619#15621#15622#15623#15624#15629#15630#15632#15633#15634#15635#15636#15638#5556#5557#5558#5559#5560#5561#5562#5563#5564#5565#">
+<input type="hidden" name="testQuestionType" value="7#7#7#7#2#7#7#7#7#2#7#7#7#7#7#7#7#7#7#7#7#7#7#7#7#2#2#2#2#2#2#2#2#2#2#7#7#7#7#7#7#7#7#7#7#7#7#7#7#7#7#7#7#7#7#2#2#2#2#2#2#2#2#2#2#">
+<input type="hidden" name="testSubjectID" value="7#7#7#7#7#7#7#7#7#7#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#">
+<input type="hidden" name="testRightMarks" value="1#1#1#1#1#2#2#2#2#2#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#1#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#">
+<input type="hidden" name="testWrongMarks" value="0.33#0.33#0.33#0.33#0#0.66#0.66#0.66#0.66#0#0.33#0.33#0.33#0.33#0.33#0.33#0.33#0.33#0.33#0.33#0.33#0.33#0.33#0.33#0.33#0#0#0#0#0#0#0#0#0#0#0.66#0.66#0.66#0.66#0.66#0.66#0.66#0.66#0.66#0.66#0.66#0.66#0.66#0.66#0.66#0.66#0.66#0.66#0.66#0.66#0#0#0#0#0#0#0#0#0#0#">
+<input type="hidden" name="testName" value="Demo Full Syllabus Test : CS">
+<input type="hidden" name="totalQuestionArray" value="65">
+<input type="hidden" name="testQuestionSerial" value="771#7#7#1#0.33#65">
+<input type="hidden" name="languagavar" id="languagavar" value="1">
+<input type="hidden" name="studentId" id="studentId" value="75776">
+<input type="hidden" name="qtype" id="qtype" value="7">
+</form>
+</div>
+<div style="margin-top:15%;position: absolute;right:20px;">
+<input type="hidden" name="mode" id="mode" value="">
+<img src="https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/photo.jpg" width="110">
+<br>
+<span><b>Name :</b> </span>Vishal Sharma
+</div>
+
+
+<script>
+
+    function generateTest() {
+
+        $("#chaclass").attr("style", "display:none;");
+
+        $("#pleloderline").show();
+
+
+        document.instructionForm.action = "index.php?pageName=test/test";
+
+        document.instructionForm.submit();
+
+    }
+</script>
+<script>
+    function onBrowserClose() {
+
+        var mode = document.getElementById('mode').value;
+        var urlData = "mode=" + mode;
+
+        $.ajax({
+            type: "post",
+            url: "index.php?pageName=test/updateTest",
+            data: urlData,
+            async: false,
+            error: function () {
+
+            },
+            success: function (result) {
+//                location.href="index.php?pageName=test/testSummary&exam=2"  ;
+            }});
+    }
+    function checkCondition() {
+
+        if ($('#termcondition').attr('checked', 'checked')) {
+            $('#termcondition').attr('checked', true);
+            $("#startTest").attr('disabled', false);
+
+            $("#chaclass").removeClass("submit1");
+            $("#chaclass").addClass("submit");
+            $("#startTest").removeClass("submit-button1");
+            $("#startTest").addClass("submit-button");
+        }
+        else {
+            $("#startTest").attr('disabled', true);
+            $("#chaclass").removeClass("submit");
+            $("#chaclass").addClass("submit1");
+            $("#startTest").removeClass("submit-button");
+            $("#startTest").addClass("submit-button1");
+        }
+
+
+
+    }
+    $("#condition").click(function () {
+        $("#termcondition").prop("checked", true);
+        checkCondition();
+
+    });
+</script>
+<div id="weava-permanent-marker" date="1532361165214"></div><div id="weava-ui-wrapper"><div class="weava-drop-area-wrapper"><div class="weava-drop-area"></div>
+<div class="weava-drop-area-text">Drop here!</div></div></div></body>
+
+</html>
+
+
+
+
+

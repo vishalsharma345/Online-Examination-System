@@ -1,0 +1,1028 @@
+{% extends 'base.html' %}
+<html>
+<body>
+
+{% block content %}
+    {% load static %}
+
+<script type="text/javascript" src="{% static 'js/jsstartE/top.js' %}"></script>
+<form id="TheForm" name="TheForm" method="GET" action="" target="TheWindow">
+<input type="hidden" name="testID" id="testID" value="">
+<input type="hidden" name="testType" id="testType" value="something">
+<input type="hidden" name="testFlag" id="testFlag" value="">
+<input type="hidden" name="totalQuestion" id="totalQuestion" value="">
+<input type="hidden" name="duration" id="duration" value="">
+<input type="hidden" id="sampleId" name="sampleId" value="">
+</form>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var sampleId = document.getElementById('sampleId').value;
+        var studentId = "75776";
+        if (sampleId != '' && sampleId != null && sampleId != undefined) {
+            var urlData = "mode=testInfo&id=" + sampleId + "&sid=" + studentId;
+            $.ajax({
+                type: "post",
+                url: "index.php?pageName=test/updateTest",
+                data: urlData,
+                async: false,
+                error: function () {
+
+                },
+                success: function (result) {
+                    if (result == 0) {
+                        alert("You can't take this test because of two reasons either its has inactive or you have already attempted this test in past.");
+                    }
+                    else {
+                        var arr = result.split('#')
+                        var totalQuestion = arr[0];
+                        var duration = arr[1];
+                        var randomSequence = arr[2];
+                        var isquiz = arr[3];
+                        var category = arr[4];
+                        var type = arr[5];
+//                        alert(sampleId+","+type+","+totalQuestion+","+duration+","+randomSequence+","+isquiz+","+category);
+                        popup(sampleId, type, totalQuestion, duration, randomSequence, isquiz, "0");
+                    }
+                }});
+        }
+    });
+    function popup(testID, testType, totalQuestion, duration, randomSequence, isQuiz, uploadUid) {
+
+        if (uploadUid == 1) {
+             var course_name = $('.test .test-tab-box .tabs li.active a').text();
+             $('.course_name').html(course_name);
+             $('#tab').val(course_name);
+             $('.upload_admit').val('Upload ' + course_name + ' Admit Card');
+            document.getElementById('admitTestID').value = testID;
+            showAdmit();
+        } else {
+
+            var params = 'width=' + screen.width;
+            params += ', height=' + screen.height;
+            params += ', top=0, left=0'
+            params += ', fullscreen=yes';
+            var testUrl = "";
+            if (isQuiz == 2) {
+                testUrl = "adminquiz";
+            } else if (isQuiz == 1 || isQuiz == 0) {
+                if (randomSequence == 0) {
+                    testUrl = "test";
+                }
+                else {
+                    testUrl = "randomtest";
+                }
+            }
+            document.getElementById('TheForm').action = "/startexam/";
+            document.getElementById('testID').value = testID;
+            document.getElementById('testType').value = testType;
+            document.getElementById('testFlag').value = isQuiz;
+            document.getElementById('totalQuestion').value = totalQuestion;
+            document.getElementById('duration').value = duration;
+
+            window.open('', 'TheWindow', "menubar=no," + params + ",location=no,resizable=yes,scrollbars=yes,status=yes");
+            document.getElementById('TheForm').submit();
+        }
+        getStream();
+    }
+
+    var params = 'width=' + screen.width;
+    params += ', height=' + screen.height;
+    params += ', top=0, left=0'
+    params += ', fullscreen=yes';
+
+</script>
+
+<script type="text/javascript">
+    function showAdmit() {
+        $("#dialog").slideDown('slow');
+        $("#dialog").css("display", "block");
+        $(".res_main_pop").css("top", "4%");
+    }
+    function showhideAdmit() {
+        $("#dialog").fadeOut('slow');
+        $("#dialog").css("display", "none");
+        $(".res_main_pop").css("top", "-100%");
+    }
+
+</script>
+
+
+
+
+
+<div id="dialog" style="display: none">
+<div class="res_pop_bg"></div>
+<div class="res_main_pop" style="top:4%; transition:0.5s ease-in-out;">
+<form enctype="multipart/form-data" id="admitStudent" name="admitStudent" action="index.php?pageName=insertAjaxProfile" method="GET" onsubmit="return validateAdmit()">
+<h2>Upload <span style="float:none;background: none;pointer-events:none" class="course_name"></span>-2019 Admit Card Details<span onclick="showhideAdmit()">X</span></h2>
+
+
+<div class="left_fld">
+<p><label><span style="float:none; background: none;color: #333;font-size: 12px;" class="course_name"></span> 2018 Roll No.</label><input id="gateRoll" name="gateRoll" type="text" style="margin-left:2px;text-transform: uppercase;"></p>
+<p><strong style="font-weight: 400;display: inline-block;margin: 4px 0 0;">Stream</strong><strong style="float: right; width: 238px;" id="str"></strong></p>
+<div style="clear:both"></div>
+
+
+<p>
+<label>City</label>
+<select class="left_fld_select" id="admitCity" name="admitCity" onchange="admitCityChange(this.value);">
+<option value="0">Select City</option>
+</select>
+<input id="examCity" name="examCity" type="hidden"></p>
+<p>
+<label>Exam Centre Address</label>
+<select class="left_fld_select" id="admitCentre" name="admitCentre" onchange="centreChange(this.value);">
+<option value="0">Select Centre</option>
+<option value="other">Other</option>
+</select>
+</p>
+<p id="other" style="display:none;"><label>Others(Type Here)</label>
+<input type="text" id="otherCentre" name="otherCentre" style="text-transform: uppercase;">
+</p>
+<input type="hidden" value="" name="tab" id="tab">
+<p style="height:48px;"><input type="submit" value="Submit"></p>
+</div>
+<span style="float:none;background: none;" class="course_name"></span>
+<div class="rgt_fld">
+<div class="img_show">
+<div class="admit_crd" id="sampleAdmit"><h4 style="margin-top: 44px;color:#c30c13;font-weight:normal;text-align:center">Please upload <div style="float:none;background: none;" class="course_name"></div> 2019 Admit card only else your user ID will be deactivated</h4><h4 style="margin-top: 20px;text-align:center;color:#c30c13;font-weight:normal">Do not upload<br> false/fake document</h4></div>
+</div>
+<p><input id="uploadAdmit" value="" name="uploadAdmit" style="background:#fff" type="text" placeholder="" disabled=""></p>
+<p>
+<input type="file" id="photoId" name="photoId" value="" style="width: 84px;height: 35px;display: none;" onchange="readURL(this, 3, this.value);">
+<input type="button" class="upload_admit" value="" name="" style="width: 95%;height: 35px;font-size:10px;  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);" onclick="$('#photoId').click();"></p>
+<p style="color: black;font-size: 9px;width: 94%;">* Please upload pdf,jpg,png files.<br>* File size should not be greater than <br>2 MB.</p>
+</div>
+<input type="hidden" id="mode" name="mode" value="admitMode">
+<input type="hidden" id="admitTestID" name="admitTestID" value="0">
+</form>
+</div>
+</div>
+
+<div class="test-quiz" id="test-quiz" style="display: none;">
+<h1>Create a Quiz <strong><a href="#" onclick="hidequizDiv();" title="Close">1</a></strong></h1>
+<ul>
+<h2 style="display:none;" id="quizerror">Quiz name is missing</h2>
+<ol>
+<li><label class="name quizalert"><input type="text" value="Quiz Name" placeholder="Please enter Quiz name" id="quizname" class="text drop" onblur="checkName(this.value)"></label></li>
+<li>
+<label><select name="selectSubject" id="selectSubject" class="text" onchange="errorDivHide();">
+<option value="0">Select Subject</option>
+</select></label>
+<div id="afterSubjectChange" style="margin:0px; padding:0px;">
+<label><select id="selectTopic" name="" class="text" onchange="errorDivHide();"><option value="">Select Topic</option></select></label>
+<label><select id="questionType" name="" class="text" onchange="errorDivHide();"><option value="">Question Type</option></select></label>
+</div>
+<label>
+<select name="difficultyLevel" id="difficultyLevel" class="text">
+<option selected="selected" value="" onchange="errorDivHide();">Select Difficulty</option>
+</select>
+</label>
+<label class="total"><input type="text" value="" placeholder="Total Question" id="quizTotalQues" class="text total" onkeypress="errorDivHide();"></label>
+</li>
+<li><a href="#" onclick="quizValidation();"><img src="https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/add-quiz.png">&nbsp;Save &amp; Add</a></li>
+</ol>
+<table width="100%" border="0px" cellpadding="10px" cellspacing="0px">
+<tbody><tr>
+<td class="heading" width="20%">Subject</td>
+<td class="heading" width="20%">Topic</td>
+<td class="heading" width="20%" align="center">Question Type</td>
+<td class="heading" width="15%" align="center">Difficulty Level</td>
+<td class="heading without-scrollactive" width="15%" align="center">Total Question</td>
+<td class="heading" align="center" width="10%">Delete</td>
+</tr>
+</tbody></table>
+<div style="height:140px; overflow:auto;" id="tabledata">
+</div>
+<table width="100%" border="0px" cellpadding="10px" cellspacing="0px">
+<tbody><tr>
+<th class="heading bottom1 border without-scrolldownactive" colspan="4" align="right"><strong>Total Question in Quiz</strong></th>
+<th class="heading bottom1 border" align="left"><span class="border" id="quiztoque">0</span></th>
+<th class="heading bottom1 border">&nbsp;</th>
+</tr>
+</tbody></table>
+
+<form name="quizForm" method="GET" action="index.php?pageName=studentquiz/instructions" id="quizForm">
+<input type="hidden" value="" name="quizSubId" id="quizSubId">
+<input type="hidden" value="" name="quiztopicId" id="quiztopicId">
+<input type="hidden" value="" name="quizquestType" id="quizquestType">
+<input type="hidden" value="" name="quizdiff" id="quizdiff">
+<input type="hidden" value="" name="quiztotalQues" id="quiztotalQues">
+<input type="hidden" value="" name="quiznamevar" id="quiznamevar">
+</form>
+<a href="#" onclick="saveQuiz();"></a>
+</ul>
+</div>
+
+<input type="hidden" id="examHidden" value="">
+<div class="content">
+
+<div class="content-center">
+<form name="forTest" method="GET" action="#">
+</form>
+
+
+
+
+
+
+<div class="pagename">Take a Test</div>
+
+<form id="form2" name="form2" method="GET" action="">
+<input type="hidden" value="2" id="forTestid" name="forTest">
+<input type="hidden" value="" id="forsub" name="forsub1">
+<input type="hidden" value="" id="fortopic" name="fortopic1">
+<input type="hidden" value="1" id="page" name="page">
+<input type="hidden" value="2" id="examChk" name="examChk">
+<input type="hidden" value="2" id="pracChk" name="pracChk">
+<input type="hidden" value="10" id="perPage" name="perPage">
+<input type="hidden" value="1" id="startTest" name="startTest">
+<input type="hidden" value="0" id="CompleteRedo" name="CompleteRedo">
+<input type="hidden" value="1" id="Incomplete" name="Incomplete">
+<input type="hidden" value="0" id="Archived" name="Archived">
+
+<input type="hidden" value="0" id="currentLi" name="currentLi">
+<div class="news-row news-rowmainpage" style="height: auto !important;max-height: none !important">
+<div class="buycoupon-namerow">
+<div class="test">
+<div class="test-tab-box">
+<div class="tabs">
+<ul id="tabs">
+<li onclick="testTabs1('cont-1')" class="active" id="cont-1"><a href="javascript:void(0)">GATE</a></li>
+<li class="combo" style="display:none">
+<input name="" type="text" class="newsearch" placeholder="Search" id="searchBox" autocomplete="off">
+<a href="javascript:void(0)" onclick="searchbox();" id="arrow" title="Click for Advance Search">
+</a>
+<ul id="dropsearch" name="dropdownsearch" style="display:none;">
+</ul>
+</li>
+</ul>
+</div>
+
+
+
+</div>
+
+
+<div id="exam" name="exam" class="drop-coloumn" style="display:block">
+<style>
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 230px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 0 5px;
+            position: absolute;
+            z-index: 1;
+            right: -22px;
+            bottom: 35px;
+            font-size: 12px;
+        }
+
+    </style>
+{% for exams in exam %}
+<div style="color: #535352;
+    font-weight: normal;
+    line-height: 14pt;"> <div class="cardinr test-container">
+<div class="taketest_main">
+<div class="taketesthdr">
+<div class="testdate_dash">
+<h3> 06 </h3>
+<span>Mar</span>
+</div>
+<div class="testdetails_dash">
+<h3 class="mt5"><strong>Demo Full Syllabus Test : {{ exam_name }}</strong></h3>
+<span class="grayinfo">Technical,General Aptitude</span>
+</div>
+<div class="remaining_time">
+<h3 class="mt5 greentext">207Days 9hours </h3>
+<span class="grayinfo">Time Remaining</span>
+</div>
+</div>
+<div class="taketest_footer">
+<div class="testinrdiv">
+<div>Total Question</div>
+<h3>{{ exams.no_of_ques }}</h3>
+</div>
+<div class="testinrdiv">
+<div>Total Marks</div>
+<h3>{{ exams.total_marks }}</h3>
+</div>
+<div class="testinrdiv">
+<div class="test_lastinrdash">
+<div>Duration</div>
+<h3>{{ exams.time_duration }}</h3>
+</div>
+ </div>
+<div class="viewreport_btn start_test_btn "><a href="javascript:void(0)" class="green " onclick="popup(7,2,65,180,0,1,0)"> Start Test<img src="https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/test-point.png" align="top" class="img"></a></div>
+</div>
+</div>
+</div>
+    {% endfor %}
+    <p style="background-color: #0063c6;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 13px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 6px 35px 0px rgba(0,0,0,0.2)">
+Please
+<a style="border-bottom:1px solid #551a8b; color:#551a8b;" href="index.php?pageName=package">upgrade</a>
+to access the remaining Tests.
+</p><div style="opacity: 0.3;margin-top:10px">
+<div class="cardinr">
+<div class="taketest_main">
+<div class="taketesthdr">
+<div class="testdate_dash">
+<h3> 01 </h3>
+<span>Mar</span>
+</div>
+<div class="testdetails_dash">
+<h3 class="mt5"><strong>Basic : Theory of Computation (GATE - 2018)</strong></h3>
+<span class="grayinfo">Technical</span>
+</div>
+<div class="remaining_time">
+<h3 class="mt5 greentext">207Days 9hours </h3>
+<span class="grayinfo">Time Remaining</span>
+</div>
+</div>
+ <div class="taketest_footer">
+<div class="testinrdiv">
+<div>Total Question</div>
+<h3>33</h3>
+</div>
+<div class="testinrdiv">
+<div>Total Marks</div>
+<h3>50</h3>
+</div>
+<div class="testinrdiv">
+<div class="test_lastinrdash">
+<div>Duration</div>
+<h3>90 min</h3>
+</div>
+ </div>
+<div class="start-test-button">
+<a href="javascript:void(0)" class="gray">
+Inactive&nbsp;&nbsp;
+<img src="https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/help-test.png" align="top" class="img">
+</a></div>
+</div>
+</div>
+</div>
+
+
+<div class="drop-coloumn" id="prac" style="display:none;color: #535352;">
+<img src="https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/ajax-loader.gif" style="margin-top:15%;margin-left:50%">
+</div>
+<div class="drop-coloumn" id="isro" style="display:none;color: #535352;">
+<img src="https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/ajax-loader.gif" style="margin-top:15%;margin-left:50%">
+
+<div class="drop-coloumn" id="mppsc" style="display:none;color: #535352;">
+ <img src="https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/ajax-loader.gif" style="margin-top:15%;margin-left:50%">
+</div>
+<div class="drop-coloumn" id="appsc" style="display:none;color: #535352;">
+<img src="https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/ajax-loader.gif" style="margin-top:15%;margin-left:50%">
+</div>
+<div class="drop-coloumn" id="coal" style="display:none;color: #535352;">
+<img src="https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/ajax-loader.gif" style="margin-top:15%;margin-left:50%">
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+</div></form>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+    var timeout = 0;
+    function testTabs1(id) {
+        var elements = ["cont-1", "cont-2", "cont-3"];
+
+        if (id == "cont-1") {
+                $("#nameOfPack").text("GATE");
+            $("#cont-1").attr("class", "active");
+            $("#cont-7").attr("class", "test-tab-box-1");
+            $("#cont-2").attr("class", "test-tab-box-1");
+            $("#cont-3").attr("class", "test-tab-box-1");
+            $("#cont-4").attr("class", "test-tab-box-1");
+            $("#cont-5").attr("class", "test-tab-box-1");
+            $("#cont-6").attr("class", "test-tab-box-1");
+            $("#exam").attr("style", "display: block;");
+            $("#exam").html('<img src="https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/ajax-loader.gif" style="margin-top:15%;margin-left:50%"/>');
+            $("#prac").attr("style", "display: none;");
+            $("#isro").attr("style", "display:none ;");
+            $("#bsnl").attr("style", "display:none ;");
+            $("#mppsc").attr("style", "display:none ;");
+            $("#appsc").attr("style", "display:none ;");
+            $("#coal").attr("style", "display:none ;");
+            $("#search1").attr("style", "display: block;");
+            $("#search2").attr("style", "display: none;");
+            $("#prac").hide();
+            $("#isro").hide();
+            $("#bsnl").hide();
+            $("#mppsc").hide();
+            $("#appsc").hide();
+            $("#coal").hide();
+            initial();
+            if (document.getElementById("examChk").value == 2) {
+                updateSummary(2, 1, 10);
+            } else {
+                document.getElementById("examChk").value = 3;
+                updateSummary(2,1);
+            }
+            document.getElementById("forTestid").value = 2;
+
+
+        }
+        if (id == "cont-2") {
+            $("#nameOfPack").text("IES");
+            $("#cont-2").attr("class", "active");
+            $("#cont-7").attr("class", "test-tab-box-1");
+            $("#cont-1").attr("class", "test-tab-box-1");
+            $("#cont-3").attr("class", "test-tab-box-1");
+            $("#cont-4").attr("class", "test-tab-box-1");
+            $("#cont-5").attr("class", "test-tab-box-1");
+            $("#cont-6").attr("class", "test-tab-box-1");
+            $("#coal").attr("style", "display:none ;");
+            $("#exam").attr("style", "display:none ;");
+            $("#isro").attr("style", "display:none ;");
+            $("#bsnl").attr("style", "display:none ;");
+            $("#mppsc").attr("style", "display:none ;");
+            $("#appsc").attr("style", "display:none ;");
+            $("#prac").attr("style", "display:block ;");
+            $("#prac").html('<img src="https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/ajax-loader.gif" style="margin-top:15%;margin-left:50%"/>');
+            $("#search2").attr("style", "display: block;");
+            $("#search1").attr("style", "display: none;");
+            initial();
+            $("#exam").hide();
+            $("#isro").hide();
+            $("#bsnl").hide();
+            $("#mppsc").hide();
+            $("#appsc").hide();
+            $("#coal").hide();
+            document.getElementById("forTestid").value = 1;
+            if (document.getElementById("pracChk").value == 2) {
+                updateSummary(1, 1, 10);
+            } else {
+                document.getElementById("pracChk").value = 3;
+                updateSummary(1,1);
+            }
+
+        }
+        if (id == "cont-3") {
+
+            $("#cont-3").attr("class", "active");
+            $("#cont-7").attr("class", "test-tab-box-1");
+            $("#cont-1").attr("class", "test-tab-box-1");
+            $("#cont-2").attr("class", "test-tab-box-1");
+            $("#cont-4").attr("class", "test-tab-box-1");
+            $("#cont-5").attr("class", "test-tab-box-1");
+            $("#cont-6").attr("class", "test-tab-box-1");
+            $("#exam").attr("style", "display:none ;");
+            $("#prac").attr("style", "display:none ;");
+            $("#bsnl").attr("style", "display:none ;");
+            $("#mppsc").attr("style", "display:none ;");
+            $("#appsc").attr("style", "display:none ;");
+            $("#isro").attr("style", "display:block ;");
+            $("#coal").attr("style", "display:none ;");
+            $("#isro").html('<img src="https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/ajax-loader.gif" style="margin-top:15%;margin-left:50%"/>');
+            $("#search2").attr("style", "display: block;");
+            $("#search1").attr("style", "display: none;");
+            initial();
+            $("#exam").hide();
+            $("#prac").hide();
+            $("#bsnl").hide();
+            $("#mppsc").hide();
+            $("#appsc").hide();
+            $("#coal").hide();
+            document.getElementById("forTestid").value = 3;
+            if (document.getElementById("pracChk").value == 2) {
+                updateSummary(3, 1, 10);
+            } else {
+                document.getElementById("pracChk").value = 3;
+                updateSummary(3,1);
+            }
+
+        }
+        if (id == "cont-4") {
+
+            $("#cont-4").attr("class", "active");
+            $("#cont-7").attr("class", "test-tab-box-1");
+            $("#cont-3").attr("class", "test-tab-box-1");
+            $("#cont-1").attr("class", "test-tab-box-1");
+            $("#cont-2").attr("class", "test-tab-box-1");
+            $("#cont-5").attr("class", "test-tab-box-1");
+            $("#cont-6").attr("class", "test-tab-box-1");
+            $("#exam").attr("style", "display:none ;");
+            $("#prac").attr("style", "display:none ;");
+            $("#isro").attr("style", "display:none ;");
+            $("#mppsc").attr("style", "display:none ;");
+            $("#appsc").attr("style", "display:none ;");
+            $("#bsnl").attr("style", "display:block ;");
+            $("#coal").attr("style", "display:none ;");
+            $("#bsnl").html('<img src="https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/ajax-loader.gif" style="margin-top:15%;margin-left:50%"/>');
+            $("#search2").attr("style", "display: block;");
+            $("#search1").attr("style", "display: none;");
+            initial();
+            $("#exam").hide();
+            $("#prac").hide();
+            $("#isro").hide();
+            $("#mppsc").hide();
+            $("#appsc").hide();
+            $("#coal").hide();
+            document.getElementById("forTestid").value = 3;
+            if (document.getElementById("pracChk").value == 2) {
+                updateSummary(5, 1, 10);
+            } else {
+                document.getElementById("pracChk").value = 3;
+                updateSummary(5,1);
+            }
+
+        }
+        if (id == "cont-5") {
+
+            $("#cont-5").attr("class", "active");
+            $("#cont-7").attr("class", "test-tab-box-1");
+            $("#cont-4").attr("class", "test-tab-box-1");
+            $("#cont-3").attr("class", "test-tab-box-1");
+            $("#cont-1").attr("class", "test-tab-box-1");
+            $("#cont-2").attr("class", "test-tab-box-1");
+            $("#cont-6").attr("class", "test-tab-box-1");
+            $("#exam").attr("style", "display:none ;");
+            $("#prac").attr("style", "display:none ;");
+            $("#isro").attr("style", "display:none ;");
+            $("#bsnl").attr("style", "display:none ;");
+            $("#appsc").attr("style", "display:none ;");
+            $("#mppsc").attr("style", "display:block ;");
+            $("#coal").attr("style", "display:none ;");
+            $("#mppsc").html('<img src="https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/ajax-loader.gif" style="margin-top:15%;margin-left:50%"/>');
+            $("#search2").attr("style", "display: block;");
+            $("#search1").attr("style", "display: none;");
+            initial();
+            $("#exam").hide();
+            $("#prac").hide();
+            $("#isro").hide();
+            $("#bsnl").hide();
+            $("#appsc").hide();
+            $("#coal").hide();
+            document.getElementById("forTestid").value = 3;
+            if (document.getElementById("pracChk").value == 2) {
+                updateSummary(6, 1, 10);
+            } else {
+                document.getElementById("pracChk").value = 3;
+                updateSummary(6,1);
+            }
+
+        }
+        if (id == "cont-6") {
+
+            $("#cont-6").attr("class", "active");
+            $("#cont-7").attr("class", "test-tab-box-1");
+            $("#cont-5").attr("class", "test-tab-box-1");
+            $("#cont-4").attr("class", "test-tab-box-1");
+            $("#cont-3").attr("class", "test-tab-box-1");
+            $("#cont-1").attr("class", "test-tab-box-1");
+            $("#cont-2").attr("class", "test-tab-box-1");
+            $("#exam").attr("style", "display:none ;");
+            $("#prac").attr("style", "display:none ;");
+            $("#isro").attr("style", "display:none ;");
+            $("#bsnl").attr("style", "display:none ;");
+            $("#mppsc").attr("style", "display:none ;");
+            $("#appsc").attr("style", "display:block ;");
+            $("#coal").attr("style", "display:none ;");
+            $("#appsc").html('<img src="https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/ajax-loader.gif" style="margin-top:15%;margin-left:50%"/>');
+            $("#search2").attr("style", "display: block;");
+            $("#search1").attr("style", "display: none;");
+            initial();
+            $("#exam").hide();
+            $("#prac").hide();
+            $("#isro").hide();
+            $("#bsnl").hide();
+            $("#mppsc").hide();
+            $("#coal").hide();
+            document.getElementById("forTestid").value = 3;
+            if (document.getElementById("pracChk").value == 2) {
+                updateSummary(7, 1, 10);
+            } else {
+                document.getElementById("pracChk").value = 3;
+                updateSummary(7,1);
+            }
+
+        }
+        if (id == "cont-7") {
+            $("#cont-7").attr("class", "active");
+            $("#cont-6").attr("class", "test-tab-box-1");
+            $("#cont-5").attr("class", "test-tab-box-1");
+            $("#cont-4").attr("class", "test-tab-box-1");
+            $("#cont-3").attr("class", "test-tab-box-1");
+            $("#cont-1").attr("class", "test-tab-box-1");
+            $("#cont-2").attr("class", "test-tab-box-1");
+            $("#exam").attr("style", "display:none ;");
+            $("#prac").attr("style", "display:none ;");
+            $("#isro").attr("style", "display:none ;");
+            $("#bsnl").attr("style", "display:none ;");
+            $("#mppsc").attr("style", "display:none ;");
+            $("#appsc").attr("style", "display:none ;");
+            $("#coal").attr("style", "display:block ;");
+            $("#appsc").html('<img src="https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/ajax-loader.gif" style="margin-top:15%;margin-left:50%"/>');
+            $("#search2").attr("style", "display: block;");
+            $("#search1").attr("style", "display: none;");
+            initial();
+            $("#exam").hide();
+            $("#prac").hide();
+            $("#isro").hide();
+            $("#bsnl").hide();
+            $("#mppsc").hide();
+            $("#appsc").hide();
+            document.getElementById("forTestid").value = 3;
+            if (document.getElementById("pracChk").value == 2) {
+                updateSummary(8, 1, 10);
+            } else {
+                document.getElementById("pracChk").value = 3;
+                updateSummary(8,1);
+            }
+
+        }
+
+    }
+
+    function updateSummary(i, p, chkId) {
+        var modeValue = i;
+        var id = "", subid = "", topicid = "";
+        var mode = "examination";
+        var admitCardUpload = "0";
+        var page = p;
+        if (chkId == '') {
+            id = document.getElementById('perPage').value;
+        } else {
+            id = chkId;
+        }
+        var like = trimList(document.getElementById("searchBox").value);
+
+        var startTest = document.getElementById("startTest").value;
+        var CompleteRedo = document.getElementById("CompleteRedo").value;
+        var Incomplete = document.getElementById("Incomplete").value;
+        var Archived = document.getElementById("Archived").value;
+;
+;
+        var urlData = "mode=" + mode + "&page=" + page + "&id=" + id + "&subid=" + subid + "&topicid=" + topicid + "&like=" + like + "&startTest=" + startTest + "&CompleteRedo=" + CompleteRedo + "&Incomplete=" + Incomplete + "&Archived=" + Archived + "&category=" + modeValue + "&admitCard=" + admitCardUpload;
+        $.ajax({
+            type: "post",
+            url: "index.php?pageName=test/updateTest",
+            data: urlData,
+            async: false,
+            error: function () {
+                //                    show("error")
+            },
+            success: function (result) {
+                var all = result;
+
+                if (modeValue == 1) {
+                    $('#prac').html(all);
+                } else if (modeValue == 2) {
+                    $('#exam').html(all);
+                } else if (modeValue == 3)
+                {
+                    $('#isro').html(all);
+                } else if (modeValue == 5)
+                {
+                    $('#bsnl').html(all);
+                } else if (modeValue == 6)
+                {
+                    $('#mppsc').html(all);
+                } else if (modeValue == 7)
+                {
+                    $('#appsc').html(all);
+                } else if (modeValue == 8)
+                {
+                    $('#coal').html(all);
+                }
+            }
+        });
+
+    }
+
+
+    function updateLink() {
+
+        updateSummary(2,1,10);
+    }
+    function OnLoad() {
+
+
+        var booleanValue = initial();
+        if (booleanValue == true) {
+            updateLink();
+        }
+
+    }
+    OnLoad();
+
+
+
+    function searchbox() {
+        if ($('#dropsearch').css('display') == 'block') {
+            document.getElementById("dropsearch").style.display = "none";
+        } else if ($('#dropsearch').css('display') == 'none') {
+            document.getElementById("dropsearch").style.display = "block";
+            //$("#dropsearch").html('<li><input name="" type="text"  class="newsearch detail" placeholder="Subject" /></li><li><input name="" type="text"  class="newsearch detail" placeholder="Topic" /></li><li><input name="" type="text" placeholder="From"  class="newsearch detail date" />&nbsp;<input name="" type="text" placeholder="To"  class="newsearch detail date" /></li><li><input name="" type="button" class="green-submit" value="Search" /></li>');
+            $("#dropsearch").html('<li onclick="changeCheck(\'startCheck\',\'startTest\')"><input name="" type="checkbox"   id="startCheck" style="display:none;" /><span style="width:14px;"><img src="https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/combo-checkticked.png" style="display:none;margin-top:5px;" id="startTestTick" />&nbsp;</span>Start Test</li><li onclick="changeCheck(\'incompleteCheck\',\'Incomplete\')"><input type="checkbox"   id="incompleteCheck" style="display:none;" /><span style="width:14px;"><img src="https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/combo-checkticked.png" id="IncompleteTick" style="display:none;margin-top:5px;" />&nbsp;</span>Incomplete</li><li onclick="changeCheck(\'completeCheck\',\'CompleteRedo\')"><input type="checkbox" id="completeCheck" style="display:none;" /><span style="width:14px;"><img src="https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/combo-checkticked.png" id="CompleteRedoTick" style="display:none;margin-top:5px;"  >&nbsp;</span>Complete / Redo Test</li><li onclick="changeCheck(\'archivedCheck\',\'Archived\')"><input name="" type="checkbox" id="archivedCheck" style="display:none;" /><span style="width:14px;"><img src="https://gw-mdsy.s3-accelerate.amazonaws.com/2019/student/images/combo-checkticked.png" id="ArchivedTick" style="display:none;margin-top:5px;" />&nbsp;</span>Archived</li><di style="display:none"><input type="button"  class="black-submit" value="Search" onclick="searchDrop();" /></div>');
+            if (document.getElementById("startTest").value == '1') {
+                document.getElementById("startCheck").checked = true;
+                document.getElementById('startTestTick').style.display = 'block';
+            }
+            if (document.getElementById("CompleteRedo").value == '1') {
+                document.getElementById("completeCheck").checked = true;
+                document.getElementById('CompleteRedoTick').style.display = 'block';
+            }
+            if (document.getElementById("Incomplete").value == '1') {
+                document.getElementById("incompleteCheck").checked = true;
+                document.getElementById('IncompleteTick').style.display = 'block';
+            }
+            if (document.getElementById("Archived").value == '1') {
+                document.getElementById("archivedCheck").checked = true;
+                document.getElementById('ArchivedTick').style.display = 'block';
+            }
+
+        }
+    }
+
+
+    $('#searchBox').keydown(function (event) {
+        //alert(event.keyCode);
+        var checkCode = event.keyCode;
+        //  alert(event.keyCode);
+        if (checkCode == 13) {
+            event.preventDefault();
+            updateLink();
+            document.getElementById("dropsearch").style.display = "none";
+        }
+        if (checkCode != 16 && checkCode != 20 && checkCode != 9 && checkCode != 18 && checkCode != 93 && checkCode != 8 && checkCode != 46 && checkCode != 37 && checkCode != 38 && checkCode != 39 && checkCode != 40 && checkCode != 13 && event.ctrlKey != true && event.shiftKey != true && event.altKey != true) {
+            document.getElementById('currentLi').value = 0;
+            var str = String.fromCharCode(event.keyCode);
+            if (timeout) {
+                clearTimeout(timeout);
+                timeout = null;
+            }
+            clearTimeout(timeout);
+            timeout = setTimeout(searchtime, 500);
+        }
+        if (checkCode == 40) {
+            var zero = document.getElementById("dropsearch");
+            var uls = getDirectChildrenByTagName(zero, 'LI');
+            var ulCount = uls.length;
+            var ele = document.getElementById('currentLi');
+            var currentLi = Number(ele.value);
+            var idNext = "list" + (currentLi + 1);
+            var idCur = "list" + (currentLi);
+
+            //alert(currentLi);
+            if (currentLi == 0) {
+                ele.value = currentLi + 1;
+                document.getElementById(idNext).className += " hover_list";
+            } else if (currentLi > 0 && currentLi < ulCount) {
+                ele.value = currentLi + 1;
+                document.getElementById(idCur).className = "";
+                document.getElementById(idCur).className += " test-down";
+                document.getElementById(idNext).className += " hover_list";
+            } else if (currentLi == ulCount) {
+                ele.value = 1;
+                idNext = "list1";
+                document.getElementById(idCur).className = "";
+                document.getElementById(idCur).className += " test-down";
+                document.getElementById(idNext).className += " hover_list";
+            }
+
+            setSearchOnArrow();
+        }
+        if (checkCode == 38) {
+            var zero = document.getElementById("dropsearch");
+            var uls = getDirectChildrenByTagName(zero, 'LI');
+            var ulCount = uls.length;
+            var ele = document.getElementById('currentLi');
+            var currentLi = Number(ele.value);
+            var idPre = "list" + (currentLi - 1);
+            var idCur = "list" + (currentLi);
+            //alert(currentLi);
+            if (currentLi == 0) {
+                // alert("Go to last");
+                ele.value = currentLi + ulCount;
+                idPre = "list" + ulCount;
+                document.getElementById(idPre).className += " hover_list";
+            } else if (currentLi == 1) {
+                // alert("Go to last");
+                ele.value = ulCount;
+                idPre = "list" + ulCount;
+                document.getElementById(idCur).className = "";
+                document.getElementById(idCur).className += " test-down";
+                document.getElementById(idPre).className += " hover_list";
+            } else if (currentLi > 1 && currentLi < ulCount) {
+                // alert("Go to previous");
+                ele.value = currentLi - 1;
+                document.getElementById(idCur).className = "";
+                document.getElementById(idCur).className += " test-down";
+                document.getElementById(idPre).className += " hover_list";
+            } else if (currentLi == ulCount) {
+                //alert("Cannot get to previous");
+                ele.value = currentLi - 1;
+                document.getElementById(idCur).className = "";
+                document.getElementById(idCur).className += " test-down";
+                document.getElementById(idPre).className += " hover_list";
+            }
+            setSearchOnArrow();
+        }
+    });
+
+    $('#searchBox').keyup(function (event) {
+        var checkCode = event.keyCode;
+        if (document.getElementById("searchBox").value != '') {
+            if (checkCode == 8 || checkCode == 46) {
+                document.getElementById('currentLi').value = 0;
+                var str = String.fromCharCode(event.keyCode);
+                if (timeout) {
+                    clearTimeout(timeout);
+                    timeout = null;
+                }
+                clearTimeout(timeout);
+                timeout = setTimeout(searchtime, 500);
+            }
+        } else {
+            document.getElementById("dropsearch").style.display = "none";
+            updateLink();
+        }
+    });
+
+    $('#searchBox').blur(function () {
+        //document.getElementById("dropsearch").style.display="none";
+    });
+
+    $('body').click(function () {
+        $("#dropsearch").hide();
+    });
+
+    $('#dropsearch').click(function (event) {
+        event.stopPropagation();
+    });
+    $('#arrow').click(function (event) {
+        event.stopPropagation();
+    });
+    function getDirectChildrenByTagName(elt, tagname) {
+        var allChildren = elt.children, wantedChildren = [], i, L;
+        tagname = tagname.toUpperCase();
+        for (i = 0, L = allChildren.length; i < L; i++) {
+            if (allChildren[i].tagName.toUpperCase() == tagname) {
+                wantedChildren.push(allChildren[i]);
+            }
+        }
+        return wantedChildren;
+    }
+
+    function onFocusList(str) {
+        var ele = document.getElementById('currentLi');
+        ele.value = str;
+    }
+
+    function setSearch() {
+        var val = document.getElementById('currentLi').value;
+        var idName = 'list' + val;
+        var ele = document.getElementById(idName);
+        document.getElementById("searchBox").value = trimList(ele.innerHTML.replace(/&amp;/g, '&'));
+        document.getElementById("dropsearch").style.display = "none";
+        updateLink();
+    }
+    function setSearchOnArrow() {
+        var val = document.getElementById('currentLi').value;
+        var idName = 'list' + val;
+        var ele = document.getElementById(idName);
+        /*line  add by navneet start here*/
+        var trimedList = trimList(ele.innerHTML);
+        trimedList = trimedList.replace("&amp;", "&");
+        /*line  add by navneet ends here*/
+        document.getElementById("searchBox").value = trimedList;
+    }
+
+    function trimList(str) {
+        str = str.replace(/^\s+/, '');
+        for (var i = str.length - 1; i >= 0; i--) {
+            if (/\S/.test(str.charAt(i))) {
+                str = str.substring(0, i + 1);
+                break;
+            }
+        }
+        return str;
+    }
+    function initial() {
+        document.getElementById("dropsearch").style.display = "none";
+        document.getElementById('currentLi').value = 0;
+        document.getElementById("searchBox").value = '';
+        //alert(document.getElementById("searchBox").value);
+        document.getElementById("startTest").value = 1;
+        document.getElementById("CompleteRedo").value = 0;
+        document.getElementById("Incomplete").value = 1;
+        document.getElementById("Archived").value = 0;
+        document.getElementById("perPage").value = 10;
+        return true;
+    }
+    function changeCheck(id, hidId) {
+        var idName = hidId + 'Tick';
+        //alert(idName);
+        if (document.getElementById(id).checked == true) {
+            document.getElementById(id).checked = false;
+            document.getElementById(hidId).value = 0;
+            document.getElementById(idName).style.display = 'none';
+            document.getElementById('currentLi').value = 0;
+            document.getElementById("searchBox").value = '';
+            document.getElementById("perPage").value = 10;
+            updateLink();
+        } else if (document.getElementById(id).checked == false) {
+            document.getElementById(id).checked = true;
+            document.getElementById(hidId).value = 1;
+            document.getElementById(idName).style.display = 'block';
+            document.getElementById('currentLi').value = 0;
+            document.getElementById("searchBox").value = '';
+            document.getElementById("perPage").value = 10;
+            updateLink();
+        }
+    }
+    function searchDrop() {
+        document.getElementById("dropsearch").style.display = "none";
+        updateLink();
+    }
+    function searchtime() {
+        var value = trimList(document.getElementById("searchBox").value);
+        var mode = 'searchBoxExam';
+        var valueLength = value.length;
+        var testType = document.getElementById("forTestid").value;
+        var urlData = "mode=" + mode + "&q=" + value + "&valueLength=" + valueLength + "&testType=" + testType;
+        $.ajax({
+            type: "post",
+            url: "index.php?pageName=test/updateTest",
+            data: urlData,
+            async: false,
+            error: function () {
+
+            },
+            success: function (result) {
+
+                var all = result;
+                value = "";
+                document.getElementById("dropsearch").style.display = "block";
+                var search = "";
+                var str = result.split("#,#");
+                var count = str.length;
+                for (var i = 0; i < count; i++) {
+                    search = search + '<li id="list' + (i + 1) + '" class="test-down" onClick="setSearch();"  onmouseover="onFocusList(' + (i + 1) + ');" >' + str[i] + '</li>';
+                }
+                if (search != 'undefined') {
+                    $("#dropsearch").html(search);
+                }
+            }
+        });
+    }
+    function getStream()
+   {
+
+         var mode = 'streams';
+         var stream = $('#tab').val();
+
+         var abc = '';
+        // alert(stream);
+       $.ajax({
+          type:'POST',
+          url:"index.php?pageName=test/updateTest",
+          data:"mode=" + mode + "&stream=" + stream,
+          success:function(data)
+          {
+              $('#str').html(data);
+          }
+       });
+    }
+
+
+</script>
+<script>
+    $(document).ready(function(){
+        $("#preloader1").hide();
+    })
+</script>
+
+{% endblock %}
+</body>
+</html>

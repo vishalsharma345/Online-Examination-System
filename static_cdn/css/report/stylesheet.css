@@ -1,0 +1,109 @@
+@font-face {
+	font-family:'Square721Blk-Normal';
+	src: url('Square721Blk-Normal_gdi.eot');
+	src: url('Square721Blk-Normal_gdi.eot?#iefix') format('embedded-opentype'),
+		url('Square721Blk-Normal_gdi.woff') format('woff'),
+		url('Square721Blk-Normal_gdi.ttf') format('truetype'),
+		url('Square721Blk-Normal_gdi.svg#Square721Blk-Normal') format('svg');
+	font-weight: 700;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-25CA;
+}
+
+@font-face {
+	font-family:'Square721Blk-Italic';
+	src: url('Square721Blk-Italic_gdi.eot');
+	src: url('Square721Blk-Italic_gdi.eot?#iefix') format('embedded-opentype'),
+		url('Square721Blk-Italic_gdi.woff') format('woff'),
+		url('Square721Blk-Italic_gdi.ttf') format('truetype'),
+		url('Square721Blk-Italic_gdi.svg#Square721Blk-Italic') format('svg');
+	font-weight: 700;
+	font-style: italic;
+	font-stretch: normal;
+	unicode-range: U+0020-25CA;
+}
+@font-face {
+	font-family:'Square721BT-BoldExtended';
+	src: url('Square721BT-BoldExtended_gdi.eot');
+	src: url('Square721BT-BoldExtended_gdi.eot?#iefix') format('embedded-opentype'),
+		url('Square721BT-BoldExtended_gdi.woff') format('woff'),
+		url('Square721BT-BoldExtended_gdi.ttf') format('truetype'),
+		url('Square721BT-BoldExtended_gdi.svg#Square721BT-BoldExtended') format('svg');
+	font-weight: 700;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-2212;
+}
+@font-face {
+	font-family:'Square721BT-Bold';
+	src: url('Square721BT-Bold_gdi.eot');
+	src: url('Square721BT-Bold_gdi.eot?#iefix') format('embedded-opentype'),
+		url('Square721BT-Bold_gdi.woff') format('woff'),
+		url('Square721BT-Bold_gdi.ttf') format('truetype'),
+		url('Square721BT-Bold_gdi.svg#Square721BT-Bold') format('svg');
+	font-weight: 700;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-2212;
+}
+@font-face {
+	font-family:'Square721BoldItalic-Regular';
+	src: url('Square721BoldItalic_gdi.eot');
+	src: url('Square721BoldItalic_gdi.eot?#iefix') format('embedded-opentype'),
+		url('Square721BoldItalic_gdi.woff') format('woff'),
+		url('Square721BoldItalic_gdi.ttf') format('truetype'),
+		url('Square721BoldItalic_gdi.svg#Square721BoldItalic-Regular') format('svg');
+	font-weight: 700;
+	font-style: italic;
+	font-stretch: normal;
+	unicode-range: U+0020-25CA;
+}
+@font-face {
+	font-family:'Square721BT-RomanCondensed';
+	src: url('Square721BT-RomanCondensed_gdi.eot');
+	src: url('Square721BT-RomanCondensed_gdi.eot?#iefix') format('embedded-opentype'),
+		url('Square721BT-RomanCondensed_gdi.woff') format('woff'),
+		url('Square721BT-RomanCondensed_gdi.ttf') format('truetype'),
+		url('Square721BT-RomanCondensed_gdi.svg#Square721BT-RomanCondensed') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: condensed;
+	unicode-range: U+0020-2212;
+}
+@font-face {
+	font-family:'Square721BT-RomanExtended';
+	src: url('Square721BT-RomanExtended_gdi.eot');
+	src: url('Square721BT-RomanExtended_gdi.eot?#iefix') format('embedded-opentype'),
+		url('Square721BT-RomanExtended_gdi.woff') format('woff'),
+		url('Square721BT-RomanExtended_gdi.ttf') format('truetype'),
+		url('Square721BT-RomanExtended_gdi.svg#Square721BT-RomanExtended') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-2212;
+}
+@font-face {
+	font-family:'Square721BT-Roman';
+	src: url('Square721BT-Roman_gdi.eot');
+	src: url('Square721BT-Roman_gdi.eot?#iefix') format('embedded-opentype'),
+		url('Square721BT-Roman_gdi.woff') format('woff'),
+		url('Square721BT-Roman_gdi.ttf') format('truetype'),
+		url('Square721BT-Roman_gdi.svg#Square721BT-Roman') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-2212;
+}
+@font-face {
+	font-family:'Square721-BoldItalic';
+	src: url('Square721-BoldItalic_gdi.eot');
+	src: url('Square721-BoldItalic_gdi.eot?#iefix') format('embedded-opentype'),
+		url('Square721-BoldItalic_gdi.woff') format('woff'),
+		url('Square721-BoldItalic_gdi.ttf') format('truetype'),
+		url('Square721-BoldItalic_gdi.svg#Square721-BoldItalic') format('svg');
+	font-weight: 500;
+	font-style: italic;
+	font-stretch: normal;
+	unicode-range: U+0020-25CA;
+}

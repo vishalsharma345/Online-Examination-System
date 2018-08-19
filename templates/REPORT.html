@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+<html>
+<head><title>Report</title>
+
+</head>
+<body>
+
+<div class="content">
+{% block content %}
+<div class="content-center">
+
+
+
+
+
+
+<div class="pagename">Reports</div>
+<form id="form2" name="form2" method="post" action="">
+<div class="news-row news-rowmainpage" style="height: auto;max-height: 5000px !important">
+
+<div class="buycoupon-namerow">
+
+<div class="test">
+
+<div class="test-tab-box">
+
+<div class="tabs">
+<ul id="tabs" class="">
+<li class="test-tab-box-1 active" id="first"><a href="javascript:void(0);" onclick="changereport('first', 'panel1')">GATE</a></li>
+<li class="" id="second"><a href="javascript:void(0);" onclick="changereport('second', 'panel2')">IES</a></li>
+</ul>
+</div>
+<script>
+                                $(document).ready(function () {
+                                    $('#first').click(function () {
+                                        $('#first').addClass("active");
+                                        $('#second').removeClass('active');
+                                        $('#third').removeClass('active');
+                                        $('#fourth').removeClass('active');
+                                    });
+                                    $('#second').click(function () {
+                                        $('#first').removeClass("active");
+                                        $('#second').addClass('active');
+                                        $('#third').removeClass('active');
+                                        $('#fourth').removeClass('active');
+
+                                    });
+                                    $('#third').click(function () {
+                                        $('#first').removeClass("active");
+                                        $('#second').removeClass('active');
+                                        $('#third').addClass('active');
+                                        $('#fourth').removeClass('active');
+                                    });
+                                    $('$fourth').click(function () {
+                                        $('#first').removeClass("active");
+                                        $('#second').removeClass('active');
+                                        $('#third').removeClass('active');
+                                        $('#fourth').addClass('active');
+                                    });
+                                });
+                            </script>
+
+
+<div class="tablecontent" id="panel1" style="display:block !important">
+
+
+
+<div class="fixed"> <div class="cardinr">
+<div class="taketest_main">
+<div class="taketesthdr">
+ <div class="testdate_dash">
+<h3> 06</h3>
+<span> Aug</span>
+</div>
+<div class="testdetails_dash">
+<span class="grayinfo">Technical,General Aptitude</span>
+<h3 class="mt5">Demo Full Syllabus Test : CS</h3>
+</div>
+
+</div>
+<div class="taketest_footer reports_footer">
+<div class="testinrdiv">
+<div class="grayinfo" title="Right Question">R.Q.</div>
+<h3>0</h3>
+</div>
+<div class="testinrdiv">
+<div class="grayinfo" title="Wrong Question">W.Q.</div>
+<h3>5</h3>
+</div>
+<div class="testinrdiv">
+<div class="grayinfo" title="Left Question">L.Q.</div>
+<h3>60</h3>
+</div>
+<div class="testinrdiv">
+<div class="grayinfo" title="Maximum Marks">Max</div>
+<h3>100</h3>
+</div>
+<div class="testinrdiv">
+<div class="test_lastinrdash">
+<div class="grayinfo" title="Total Marks">T.M.</div>
+<h3>-1.65</h3>
+</div>
+</div>
+<div class="testinrdiv">
+
+<a class="viewreport_btn viewreport_test_btn" title="View Reports" id="" style="" href="/anlysis">VIEW REPORTS</a> </div>
+</div>
+</div>
+</div>
+
+
+</div>
+
+<div id="sort-pagination">
+<ul>
+<div class="abbreviation">R.Q - Right Question | W.Q - Wrong Question | L.Q - Left Question | Max. - Maximum Marks | T.M - Total Marks</div>
+<div id="displayitem2"> Display item on page
+<select name="specialization" onchange="reportExamPerPage('&amp;ID1=&amp;id1=' + this.value)" class="displayfield">
+<option value="10">10 Item</option>
+<option value="15">15 Item</option>
+<option value="20">20 Item</option>
+<option value="25">25 Item</option>
+<option value="30">30 Item</option>
+<option value="50">50 Item</option>
+<option value="100">100 Item</option>
+<option value="All">All</option>
+</select>
+</div>
+</ul>
+</div>
+
+</div>
+<div class="tablecontent" id="panel2" style="display:none !important">
+
+
+<div class="fixed"><div class="test-available report"><strong>No IES Test Report Available</strong></div>
+
+</div>
+
+<div id="sort-pagination">
+<ul>
+<div class="abbreviation">R.Q - Right Question | W.Q - Wrong Question | L.Q - Left Question | Max. - Maximum Marks | T.M - Total Marks</div>
+<div id="displayitem2"> Display item on page
+<select name="specialization" onchange="reportExamPerPage('&amp;ID1=&amp;id1=' + this.value)" class="displayfield">
+<option value="10">10 Item</option>
+<option value="15">15 Item</option>
+<option value="20">20 Item</option>
+<option value="25">25 Item</option>
+<option value="30">30 Item</option>
+<option value="50">50 Item</option>
+<option value="100">100 Item</option>
+<option value="All">All</option>
+</select>
+ </div>
+</ul>
+</div>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</form>
+
+
+</div>
+    {% endblock %}
+</div>
+</body>
+</html>

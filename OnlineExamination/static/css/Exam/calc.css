@@ -1,0 +1,215 @@
+*{
+	box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+}
+
+body{
+    font-family: Arial;
+}
+
+.calc_close{
+	background: none repeat scroll 0 0 black;
+	border-radius: 50%;
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	height: 25px;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -12px;
+	width: 25px;
+	cursor:pointer;
+}
+/*.calc_close:hover{
+	background:#c0392b;
+}*/
+.calc_container {
+    background: none repeat scroll 0 0 #dadada;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1) inset;
+    padding: 10px;
+    width: 463px;
+    border-bottom: 7px solid #999;
+    position:relative;
+}
+
+.left_sec{
+    float: left;
+   /*  margin-right: 10px; */
+}
+.right_sec{
+    float: left;
+    height:180px; 
+}
+/* KEY ROW */
+.calc_row{
+    display: block;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+
+/* KEY BUTTONS */
+#keyPad a {
+    background: #f1f1f1;
+    border-color: #aaa;
+    border-image: none;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px 1px 3px;
+    color: #444;
+    cursor: pointer;
+    /*  display: block; */
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    height: 25px;
+    line-height: 20px;
+    margin-right: 5px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    width: 35px;
+}
+#keyPad a.min {
+    font-size: 10.5px;
+}
+#keyPad a.last {
+    margin-right: 0px;
+}
+
+
+#keyPad a:active {
+    position: relative;    
+    height: 25px;
+    border-bottom: 1px solid #aaa;
+}
+#keyPad_btnEnter:active  {
+	position:absolute !important;	
+	bottom:17px !important;  
+}
+#keyPad a:hover  {
+    background: #eaeaea;
+}
+.text_container {
+  display: inline;
+  /* position: relative; */
+}
+.memoryhide {
+  visibility: hidden;
+  position: absolute;
+  top: 52px;
+  right:429px;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 1s, visibility, 1s;
+}
+.memoryshow {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* INPUT/MEM TEXT BOXES*/
+.keyPad_TextBox, .keyPad_TextBox1{
+    background: none repeat scroll 0 0 #fff;
+    border-color: #aaa;
+    border-image: none;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px 1px 3px;
+    font-size: 20px;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    text-indent: 10px;
+    vertical-align: middle;
+    width: 434px;
+    float: left;
+    margin-bottom: 7px;
+    padding-right:5px;	
+}
+
+.degree_radian{
+    float: left;
+    height: 25px;
+    width: 80px;
+    display: inline-block;
+    font-size:9px;
+    margin-top: 4px;
+    vertical-align: middle;
+}
+
+#keyPad_btnDot{
+	width:35px!important;
+}
+#keyPad_btn0{
+	width:76px!important;
+}
+/* ARROWS */
+.calc_arrows{
+    font-size: 24px!important;
+    /*line-height: 29px!important;*/
+}
+
+/* ENTER a: QUAD WIDTH */
+#keyPad #keyPad_btnEnter{
+    background: none repeat scroll 0 0 #2ecc71;
+    border-color: #27ae60;
+	bottom:17px;
+    color: #fff;
+    font-size: 20px;
+	line-height: 47px;
+	right:10px;
+    width: 35px;
+    height: 53px;
+	position:absolute;
+    /* LINE-HEIGHT: 65PX; */
+    FONT-SIZE: 20px;	
+}
+	
+/* ZERO a: DOUBLE WIDTH  
+#keyPad #keyPad_btn0{  
+    width: 95px;  
+}*/
+
+/* BACKSPACE/CLEAR INPUT KEYS*/
+
+#keyPad #keyPad_btnClr,
+#keyPad #keyPad_btnInverseSign,
+#keyPad #keyPad_btnAllClr{
+    background: none repeat scroll 0 0 #e74c3c;
+    color: #fff;
+    border-color: #c0392b;
+	width:35px!important;
+    
+}
+#keyPad #keyPad_btnBack
+{
+background: none repeat scroll 0 0 #e74c3c;
+    color: #fff;
+    border-color: #c0392b;
+	width:76px!important;
+}	
+/* SPECIAL FORMATTING FOR SUPER-SCRIPT KEYS */
+#keyPad #keyPad_btnSquare,
+#keyPad #keyPad_btnCube,
+#keyPad #keyPad_btnExp,
+#keyPad #keyPad_btnYpowX{ 
+    font-size: 12px;
+}
+
+/* CLEAR BOTH */
+.clear {clear:both;}
+
+.superscript,.subscript  {
+    font-size: 0.7em;
+    position: relative;
+    top: -0.5em;
+}
+.subscript {
+   top: 0.5em;
+}

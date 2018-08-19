@@ -1,0 +1,108 @@
+
+<html>
+{% load static %}
+<link href="{% static 'css/report/roboto.css' %}" rel="stylesheet" media="all" type="text/css">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/exams.css' %}">
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'css/style (2).css' %}" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+
+<body>
+
+	<div class="w3ls-banner-info-bottom">
+		<div class="container">
+			<div class="banner-address">
+				<div class="col-md-3 banner-address-left">
+					<p><i class="fa fa-map-marker" aria-hidden="true"></i> Jamshedpur</p>
+				</div>
+				<div class="col-md-3 banner-address-left">
+					<p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:example@email.com">mail@insightinfo.com</a></p>
+				</div>
+				<div class="col-md-3 banner-address-left">
+					<p><i class="fa fa-phone" aria-hidden="true"></i> +91 805 120 7106</p>
+				</div>
+					<div class="col-md-3 agile_banner_social">
+						<ul class="agileits_social_list">
+							<li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+							<li><a href="#" class="w3_agile_vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+					<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+    <div class="header">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h1><a class="navbar-brand" href="index.html">Insight Online Exam</a></h1>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+					<nav class="cl-effect-13" id="cl-effect-13">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="index.html">Home</a></li>
+                            	<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+								<ul class="dropdown-menu agile_short_dropdown">
+									<li><a href="icons.html">Insight Info System</a></li>
+									<li><a href="typography.html">Services</a></li>
+								</ul>
+							</li>
+
+							<li><a href="/portfolio.html">Courses</a></li>
+                            <li><a href="contact.html">Exams</a></li>
+
+							<li><a href="contact.html">Blog</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                            <li><a href="/login">Login</a></li>
+                            <li><a href="/register">Sign Up</a></li>
+						</ul>
+						<div class="w3_agile_login">
+							<div class="cd-main-header">
+								<a class="cd-search-trigger" href="#cd-search"> <span></span></a>
+								<!-- cd-header-buttons -->
+							</div>
+							<div id="cd-search" class="cd-search">
+								<form action="#" method="post">
+									<input name="Search" type="search" placeholder="Search...">
+								</form>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</nav>
+		</div>
+	</div>
+    <h2 class="w3ls_head"><span>Wel </span>come</h2>
+            <h3 class="w3ls_head"><span>Practice Best Questions, </span>for</h3>
+
+<div class="content">
+    {% block content %}
+        <div class="col-md-12 col-xs-offset-0">
+<div class="row">
+
+    {% for exams in exam %}
+<div class="col-xs-12 col-sm-2 col-md-3 hp-each-course">
+<a  href="/exam?name={{ exams.exam_name }}" class="content" >
+<div class="inner" >
+<h4>{{ exams.exam_name }}</h4>
+</div>
+</a>
+</div>
+    {% endfor %}
+</div>
+</div>
+    {% endblock %}
+</div>
+</body>
+</html>

@@ -1,0 +1,617 @@
+
+@media only screen and (min-width:1480px){
+.pakgimg img {
+    width: 150px;
+}
+.pakgimg{height:164px}
+    .content{
+    width: 1200px
+}
+	.packagecntr.packagedashboard:nth-child(4n-6) {
+/*    border: 2px solid rgb(132,147,202);*/
+    margin: 20px 25px;
+}
+.packagecntr.packagedashboard:nth-child(4n-5) {
+/*    border: 2px solid rgb(249,150,95);*/
+    margin: 20px 25px 20px 0;
+}
+}
+/*
+@media only screen and (max-width:1800px){
+	.content{
+		width: 1200px
+	}
+}
+
+@media only screen and (min-width:1500px){
+	.packagecontent{
+		width: 900px;
+    	display: inline-block;
+	}
+	.overviewblock_main{
+		width: 19.2%;
+		margin: 0 0.5%
+	}
+	.overanalysis_blockbig{
+		    width: 32.3%;
+		margin: 0 1.5% 0px 0
+	}
+	.comparisionre_main {
+    width: 32.6%;
+    margin: 0 0.5%;
+	}
+	.fullwidthblock_main{
+		width: 100%
+	}
+	.askexpertblock{
+		width: 100%
+	}
+}
+@media only screen and (max-width:1500px){
+	.content{
+		width: 900px
+	}
+}
+*/
+
+@media only screen and (max-width:1300px){
+    .right-coloumn {
+        margin: 90px 20px 0 329px;
+    }
+    .overviewblock_main{
+        width: 19%;
+        margin: 0 1% 0 0;
+    }
+    .overanalysis_blockbig {
+        width: 32%;
+        margin: 0 1% 0px 0;
+    }
+    .fullwidthblock_main {
+        width: 100% !important;
+    }
+    .comparisionre_main {
+        width: 32%;
+    }
+    .askexpertblock{width:100% !important;}
+}
+
+
+@media only screen and (max-width:1200px){
+	.content{
+		width: auto;
+	}
+    .content.bookmark-wrapper{width: 100%;}
+	
+	.packagecntr.packagedashboard:nth-child(4n-6){
+		margin: 20px 1.5%
+	}
+	.packagecntr.packagedashboard:nth-child(4n-5){
+		margin: 20px 1.5% 20px 0
+	}
+	.overanalysis_blockbig{
+		width: 32%;
+		margin: 0 2% 0 0
+	}
+	.comparisionre_main {
+        width: 31.7%;
+        margin: 0 1.2%;
+    }
+	.fullwidthblock_main{
+		display: inline-block;
+		width: 100%;
+	}
+	.sidebar{
+		overflow: scroll
+	}
+    #Sectionwise{
+        width: 100%;
+        min-width: auto !important;
+        max-width: auto !important;
+        margin: 0 !important;
+    }
+    #timewise{
+        width: 100%;
+        min-width: auto !important;
+        max-width: auto !important;
+        margin: 0 !important;
+    }
+    #difficultywise{
+        width: 100%;
+        min-width: auto !important;
+        max-width: auto !important;
+        margin: 0 !important;
+    }
+    #comparision{
+        width: 100%;
+        min-width: auto !important;
+        max-width: auto !important;
+        margin: 0 !important;
+    }
+	
+}
+
+@media only screen and (max-width:1050px){
+    
+    .optioncontent {
+        width: auto;
+    }
+    .packagecntr{width: 42%;}
+    .packagecntr.buy-package {
+        margin: 0px 15px 20px;
+    }
+    .pakgimg img {
+        width: 220px;
+    }
+    .schedulecard .testdetails_dash {
+        width: 42%;
+    }
+    .schedulecard .testdetails_dash h3 {
+        margin: 4px 0px 2px;
+    }
+    .sched_dates {
+        width: 50%;
+    }
+    .overviewblock_main{
+        width: 30%;
+        margin: 1% 1% 0 0;
+    }
+    .comparisionre_main {
+        width: 31% !important;
+        margin: 0 1% !important;
+    }
+    .dashboardcard .testdetails_dash {
+        width: 300px;
+    }
+    .price-lft h2{
+        font-size:15px;
+    }
+    
+}
+
+
+
+@media only screen and (max-width:1024px){
+    .right-coloumn{
+        margin: 90px 20px 0 332px;
+    }
+    .testdetails_dash {
+        width: 68%;
+    }
+    .dashboardcard .testdetails_dash {
+        width: 40%;
+    }
+}
+@media only screen and (max-width:980px){
+	.schedulecard .testdetails_dash{
+		margin: 10px;
+        width: 100%;
+        text-align: center;
+	}
+    .schedulecard .sched_dates {
+        width: 100%;
+    }
+	.taketesthdr{
+		padding: 10px;
+	}
+    .reports_footer .testinrdiv {
+        width: 65px;
+    }
+	.news-row{
+		max-height: 250px;
+	}
+	
+	#testschedule{
+		max-height: 287px !important
+	}
+	.packagebutton{
+		margin:0px;
+	}
+    .overviewblock_main {
+        width: 32%;
+    }
+    .data-lft{width:27%;}
+    .add-wdth{width:5%;}
+    .data-lft h3{
+        font-size:12px;
+    }
+  .snd-scton .snd-data{
+        width:30%;
+    }
+ .price-lft{
+        margin-bottom:25px;
+        width:50%;
+    }
+	
+}
+@media only screen and (max-width:930px){
+	
+	.sidebar{
+		width: 215px;
+		padding: 15px;
+	}
+	.right-coloumn {
+        margin: 74px 17px 0 267px;
+	}
+
+	.testdetails_dash{
+		width: 60%
+	}
+    .correctoption .solutioncontent img {
+        width: auto;
+        max-width: 100%;
+    }
+    
+    .testinrdiv {
+        width: 103px;
+        padding: 15px 10px;
+    }
+    .test-tab-box #sort-pagination {
+        left: 245px;
+    }
+   
+}
+@media only screen and (max-width: 800px){
+    .sched_dates{
+        width: 270px;
+    }
+    .sched_dates .maindate{
+        padding: 8px 8px;
+    }
+    .dashboardcard .viewreport_btn {
+        font-size: 13px;
+    }
+    .test-container .viewreport_btn {
+        width: 90px;
+        padding: 0 12px;
+        font-size: 11px;
+        margin: 15px 10px;
+    }
+    .testinrdiv {
+        width: 107px;
+        padding: 15px 10px;
+    }
+    .reports_footer .testinrdiv {
+        width: 55px;
+    }
+    .viewreport_btn {
+        padding: 0;
+        font-size: 12px;
+        margin: 15px 10px;
+    }
+    .overviewblock_main {
+        width: 49%;
+    }
+    .news-row {
+        max-height: 270px;
+    }
+    .viewreport_btn img {
+        margin: 0 0 0 2px;
+    }
+    
+}
+@media only screen and (max-width: 768px){
+    .schedulewatch{
+        margin-right: 10px;
+    }
+    .pakgimg img {
+        width: 100%;
+    }
+}
+@media only screen and (max-width:750px){
+	.logo_img{
+		width: 220px !important; 
+	}
+	.leftmenubtn{
+		display: block;
+	}
+    .dashboardcard .viewreport_btn {
+        width: 110px;
+        font-size: 14px;
+    }
+	
+	.sidebar{
+		left: -247px;
+		z-index: 9991;
+		top: 67px;
+		transition: all 0.5s ease;
+	}
+	.right-coloumn {
+    margin: 74px 17px 0 17px;
+    }
+	.right_header{
+		display: none;
+	}
+	.header{
+		text-align: center;
+		height: 67px;
+	}
+	.left-logo{
+		float: none
+	}
+	.rightSlide{
+	left: 0px;
+	}
+    .test-container .viewreport_btn {
+        width: 110px;
+        padding: 0 15px;
+        font-size: 14px;
+        margin: 15px;
+    }
+    .reports_footer .testinrdiv {
+        width: 65px;
+    }
+    .viewreport_btn {
+        padding: 0 15px;
+        font-size: 14px;
+        margin: 15px;
+    }
+    .test-tab-box #sort-pagination {
+        left: 0;
+    }
+    .edit-btn-box {
+        display: block;
+    }
+    
+    /*add by satyam*/
+    
+    .data-lft{
+        width:24%;
+        padding:10px;
+        box-sizing:border-box;
+        margin-bottom: 8px;
+    }
+}
+@media only screen and (max-width:640px){
+	.testdetails_dash h3 {
+    font-weight: normal;
+    font-family: Roboto;
+}
+	.schedulecard .testdetails_dash{
+		width: 100%;
+		text-align: center;
+		margin: 20px 10px
+	}
+	.sched_dates{
+		width:100%;
+	}
+	#testschedule{
+	max-height: 350px !important;
+	}
+	.sched_dates .maindate{
+		padding:10px 30px;
+	}
+		.dashboardcard  .starttestbtn {
+    float: right;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+			margin-top:15px;
+}
+	.sidenavigation ul li a.Signout_left{
+		display: block
+	}
+	.dashboardcard .remaining_time{
+		float: left;
+        text-align: center;
+        width: 50%;
+	}
+	.dashboardcard .testdetails_dash{
+		margin-left: 0px;
+        text-align: center;
+        width: 50%;
+        margin-right: 0px;
+	}
+    .dashboardcard .viewreport_btn {
+        width: 100%;
+        font-size: 14px;
+        float: none;
+        display: inline-block;
+        box-sizing: border-box;
+        margin: 10px 0 5px;
+    }
+	.news-row {
+        max-height: 340px;
+    }
+    #testschedule.news-row.news-row800{
+        max-height: 380px !important;
+    }
+    .comparisionre_main .grayinfo {
+        font-size: 14px;
+    }
+
+}
+@media only screen and (max-width:560px){
+	.testinrdiv{
+		padding: 10px;
+	}
+	.testinrdiv:last-child{
+		display: inline-block;
+		width: 100% !important;
+		text-align: center;
+	}
+	.viewreport_btn{
+		float: none !important;
+        margin: 10px 3%;
+        display: block;
+        width: 94%;
+        box-sizing: border-box;
+	}
+	.testinrdiv {
+        display: inline-block;
+        width: 33%;
+        text-align: center;
+	}
+	
+	.editcancel, .editsave{
+		margin-top: 15px;
+	}
+    .test-container .viewreport_btn {
+        width: 94%;
+        padding: 0 15px;
+        font-size: 14px;
+        margin: 15px 3%;
+        box-sizing: border-box;
+        display: inline-block;
+    }
+    .overviewblock_main {
+        width: 49%;
+    }
+    .overanalysis_blockbig {
+        width: 48%;
+        margin: 2% 2% 0 0;
+    }
+    .overall_footer {
+        padding: 15px 5px;
+        text-align: center;
+    }
+	
+}
+@media only screen and (max-width:500px){
+    .data-lft{
+        width:100%;
+    }
+     .snd-scton .snd-data{
+        width:100%;
+    }
+    .snd-scton .snd-wdth{
+        width:100%;
+    }
+    .package-main h1{
+        padding: 10px 5px;
+        font-size: 15px;
+    }
+    .gate-img img{
+        max-width:170px;
+    }
+    .data-lft{
+        height:auto;
+    }
+    .data-lft h3{
+        font-size:14px;
+    }
+    .price-lft{
+        width:100%;
+        margin-bottom:20px;
+    }
+}
+@media only screen and (max-width:480px){
+	.dashboardcard .viewreport_btn{
+		width: 100%;
+		box-sizing: border-box;
+		border-radius: 0;
+	}
+	.sched_dates .maindate{
+		padding:10px;
+	}
+	.profile_content{
+		width: 100%;
+	}
+	.profilenews-row{
+		padding: 0 10px 10px;
+	}
+	.edit-profile-name{
+		width: 23%;
+	}
+	.list-left {
+    float: left;
+    padding-left: 20px;
+		width: 65% !important;}
+		.list-left .edit-text-textfield{
+		width: 65% !important
+	}
+	.pagename{
+		margin-top: 0px;
+		font-size: 16px;
+	}
+	.news-row{
+		margin-top: 10px;
+        max-height: 400px;
+	}
+	.reports_footer .testinrdiv {
+    width: 20%;
+    }
+	.test_lastinrdash{
+		width: auto;
+	}
+    .test-tab-box ul li .newsearch {
+        width: 120px;
+    }
+    .packagecntr {
+        width: 92%;
+    }
+    .pakgimg img {
+        width: 200px;
+    }
+    .testdetails_dash {
+        width: 100%;
+        margin: 10px 0 0 0;
+    }
+    .remaining_time {
+        float: none;
+        text-align: left;
+        margin: 10px 0 0 0;
+        width: 100%;
+    }
+    .test-container .viewreport_btn {
+        border-radius: 0;
+        margin: 5px 3% 15px;
+    }
+    .viewreport_btn {
+        border-radius: 0;
+    }
+    .overviewblock_main {
+        width: 99%;
+        margin: 0 1% 2% 0;
+    }
+    .overanalysis_blockbig {
+        width: 98%;
+    }
+    #Sectionwise {
+        margin: 0 auto!important;
+    }
+    #timewise {
+        margin: 0 auto !important;
+    }
+    #difficultywise {
+        margin: 0 auto !important;
+    }
+    #comparision{
+        margin: 0 auto !important;
+    }
+    .comparisionre_main .grayinfo {
+        font-size: 12px;
+    }
+    .comparisionre_main {
+        width: 98% !important;
+        margin: 0 1% 2% !important;
+    }
+    
+}
+@media only screen and (max-width:360px){
+    .testdetails_dash{
+        width: 100%;
+    }
+    .dashboardcard .remaining_time{
+        width: 100%;
+        text-align: left;
+    }
+    .news-row{
+        max-height: 450px;
+    }
+    .testinrdiv {
+        padding: 10px 5px;
+    }
+    .dashboardcard .testdetails_dash {
+        text-align: left;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 320px){
+    .sched_dates .maindate{
+        padding: 7px;
+    }
+    #testschedule.news-row.news-row800{
+        max-height: 375px !important;
+    }
+    .cpn-txt{font-size:15px;margin-left: 29px;}
+}

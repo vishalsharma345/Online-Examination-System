@@ -1,0 +1,631 @@
+a { text-decoration : none; }
+a:hover {text-decoration: none;}
+/*body{
+	height:100%;
+	overflow:auto;
+	font-family:arial,verdana,helvetica,sans-serif;
+	font-size:0.8em;
+	margin:0px;
+	-moz-user-select:none;
+	/*cursor:url("BLACK.cur"),auto;*/
+}*/
+/*textarea{
+	resize:none;
+}
+div{
+	cursor:url("BLACK.cur"),auto;
+}
+select{
+	cursor:url("BLACK.cur"),auto;
+}*/
+input{
+	/*cursor:url("BLACK.cur"),auto;*/
+	vertical-align:middle;
+	margin-left:10px;
+}
+
+li{
+	padding-top:3px;
+}
+
+ul {
+    list-style-type: disc;
+}
+ul, ol {
+    margin: 0 1.5em 1.5em;
+}
+#header {
+	background: url("../images/header_bg.gif") repeat-x scroll left bottom transparent;
+	background-color : #4D8CCA;
+	width:100%;
+    height: 45px;
+}
+#mainright{
+	width:21%;
+	overflow:hidden;	
+	float:left;
+}
+
+#mainleft{
+	width:79%;
+	overflow:hidden;
+	float:left;
+}
+#instPaginationa
+{
+	float:right;
+}
+
+
+.btn-primary:hover {
+    background-color: #0c7cd5;
+    border-color: #0a68b4;
+    color: #ffffff;
+    
+}
+
+
+.btnsection
+{
+	height:40px;
+	padding:0 20px;
+       
+}
+.btn-primary img
+{
+	vertical-align:middle;
+}
+#PreviousInst
+{
+	float:left;
+}
+
+
+#currentQues{
+	height:auto;	
+}
+
+#container{
+	min-height: 100%;
+	height: 100%;
+	width:100%;
+}
+
+#timer{
+	width:100%;
+	border : 0px solid;
+}
+
+.numberpanel{
+	background-color : #E4EDF7;
+	width:100%;
+	clear:both;
+}
+
+#numberpanelQues{
+	padding-top:7px;
+	overflow:auto;
+	width:95%;
+}
+
+
+#footer a { color: #fff; text-decoration: none; }
+#footer a:hover { color: #fff; text-decoration: underline; }
+#footer .footerTataLogo { float: right; margin: 8px 10px 0 0; }
+#footer .footerCopywright { float: left; margin: 4px 0 0 10px; }
+
+
+#groups{
+	font-size: 1em;
+	font-family:arial,verdana,helvetica,sans-serif;
+/*	margin-bottom:7px;
+	margin-top:7px;*/
+}
+
+#viewSection{
+	font-family:arial,verdana,helvetica,sans-serif;
+	padding : 5px;
+	height:10%;
+	font-size:15px;
+}
+
+
+.allSections
+{
+background:#ffffff;
+   border: 1px solid #b3b3b3;
+    border-radius: 3px;
+    color: #585c65;
+    /*! float: left; */
+    height: 29px;
+    /*! line-height: 24px; */
+    margin-top: 8px;
+	 margin-right: 6px;
+    /*! padding-left: 11px; */
+    /*! padding-right: 12px; */
+	cursor:pointer;
+	/*! width:171.5px; */
+   vertical-align: middle;
+   display: inline-block;
+   padding: 5px;
+}
+
+
+.allsections .disabled{
+	color : #848484;
+}
+.currentSectionSelected{
+	background-color: #38a9eb;
+	color:#fff;
+    border:1px solid #38a9eb;
+}
+.currentSectionSelected::before {
+    border: 6px solid transparent;
+    content: "";
+    height: 0;
+    position: relative;
+    width: 0;
+}
+.currentSectionSelected::before {
+    border-top: 6px solid #38a9eb;
+    bottom: -28px;
+    left: 44%;
+}
+
+.classic { padding: 0.3em 1em; float:left;z-index : 1100;padding-bottom:10px;width:35%}
+.classic {background: #CAE1FF; border: 1px solid #0066CC;}
+
+.button {
+    border-collapse: collapse; background-color: #C7DCF0; border: #A9D0F5 2px solid;
+    margin-top: 0.5%;margin-right: 8px;cursor:pointer;
+}
+.button1 {
+    border-collapse: collapse; background-color: #C7DCF0; border: #A9D0F5 2px solid;
+    margin-top: 0.5%; text-align: center; width: 100%; font-size:12px;cursor:pointer;
+}
+
+.back{
+	width:80px;
+}
+
+.actionBn{
+	width:180px;
+	height:30px;
+	padding-top:1px;
+	padding-bottom:1px;
+}
+
+#instructionsDiv{
+	display:none;
+	overflow: auto;
+	height:73%;
+	/* width:896px; */
+	float:left;
+	overflow:auto;
+	margin-left:3px;
+}
+
+
+
+
+#QPDiv{
+	display:none;
+	overflow: auto;
+	height:73%;
+	/* width:896px; */
+	float:left;
+	margin-left:3px;
+}
+
+#sectionSummaryDiv{
+	display:none;
+	
+	height:73%;
+	
+	border: 1px #c3c3c1 solid;
+	overflow:auto;
+	margin-left:3px;
+}
+
+
+
+.boxgreen{
+    border:2px #000 solid;
+    width:30px;
+    height:20px;
+    margin:10px 3px 4px 4px;
+    float:left;
+    text-align:center;
+    background:#698B22;
+}
+
+.boxviolet{
+    border:2px #000 solid;
+    width:30px;
+    height:20px;
+    margin:10px 3px 4px 4px;
+    float:left;
+    text-align:center;
+    background-color:#CFCDFF;
+}
+
+.box1{
+    border:2px #000 solid;
+    width:30px;
+    height:20px;
+    margin:10px 3px 4px 4px;
+    float:left;
+    text-align:center;
+    background: white;
+}
+
+.boxred{
+    border:2px #000 solid;
+    width:30px;
+    height:20px;
+    margin:10px 3px 4px 4px;
+    float:left;
+    text-align:center;
+    background:#CD0000;
+}
+
+
+
+.highlightText table{
+	color:red;
+	clear:both;
+}
+
+.highlightText{
+	color:red;
+	clear:both;
+	display:block;
+	margin-top:5px;
+}
+
+.loginText{
+	border: 1px solid rgb(148, 180, 193); 
+	background-color: rgb(223, 239, 252);
+}
+
+.loginLabel{
+	font-weight:bold;
+	clear:both;
+}
+
+
+.bordertable{
+	border-left : 1px solid #000;
+	border-top : 1px solid #000;
+	margin-top:5px;
+}
+.bordertable th{
+	border-right : 1px solid #000;
+	border-bottom : 1px solid #000;
+	padding:5px;
+	background : #E4EDF7;
+
+}
+
+.bordertable td{
+	border-right : 1px solid #000;
+	border-bottom : 1px solid #000;
+	text-align: center;
+	padding:5px;
+}
+
+
+.questionTypeCont{
+
+	height:30px;
+	line-height:29px;
+	border-top:1px solid #c3c3c1;
+
+}
+
+.questionTypeCont .content{
+	size : 1em;
+	font-weight: bold;
+	float:left;
+	padding-left:5px;
+}
+
+.questionTypeCont .marks{
+	size : 0.8em;
+	float:right;
+	font-style:italic;
+	padding-right:5px;
+}
+
+
+#viewQPDiv{
+	padding-left:10px;
+	padding-top:5px;
+}
+
+/************* Typing Type Question css starts here	***********/
+
+.highlight{
+	background: none repeat scroll 0 0 #DDDDDD;
+		border-radius: 3px;
+		color: blue;
+}
+
+.correct{
+		border-radius: 3px;
+		color: green;
+}
+
+.wrong{
+		border-radius: 3px;
+		color: red;
+}
+
+
+/************ Typing Type Question css ends here *************/
+/********** Typing Submit Button style ************/
+.typingTestButtonDisabled{
+	background-color:#C7DCF0;
+	height:30px;
+	border:2px solid #A9D0F5;
+}
+
+/********** Typing Submit Button style ends ************/
+/********** Save & Next Button css starts **************/
+/**.btnEnabled {
+	background-color:#2F72B7;
+	font-weight:bold;
+	color:#FFFFFF;
+	height:30px;
+	width: 170px;
+	cursor:pointer;
+	border:2px solid #A9D0F5;
+}
+.btnDisabled {
+	background-color:#C7DCF0;
+	height:30px;
+	border:2px solid #A9D0F5;
+}*/
+/********** Save & Next Button css ends **************/
+
+/********** Feedback Table css starts *****************/
+.feedback {
+	border: 1px solid #eeeeee;
+}
+.feedback td{
+	vertical-align:middle;
+	padding-left : 5px;
+	padding-right : 5px;
+	padding-top : 5px;
+	padding-bottom : 5px;
+	background-color:#FFFFFF;
+	text-align:left;
+}
+.feedback th{
+	vertical-align:middle;
+	padding-left : 5px;
+	padding-right : 5px;
+	padding-top : 5px;
+	padding-bottom : 5px;
+	background-color:#CEE3F6;
+	font-weight: bold;
+	text-align:center;
+}
+/*********** Feedback table css ends **************/
+.header {
+	font-size : 16px;
+	font-weight: bold;
+}
+.examSummaryHeader {
+	text-align:center;
+	
+}
+.buttonDiv {
+	text-align:center;
+	padding:5px;
+}
+.rangeDefinitionBlock{
+	background: none repeat scroll 0 0 #fff7e2;
+	border: 1px solid #cccccc;
+	width: 70%;
+	font-family: arial, verdana, helvetica, sans-serif ;
+	font-size : 0.87em;
+	padding:5px;
+}
+.radio-btn{
+	vertical-align: middle;
+	margin : 0;
+	padding : 0;
+	margin-right: 3px !important;
+}
+/********** programing test UI ***************/
+.CodeMirror {
+	border: 1px solid black;
+	font-size:13px
+}
+#progQuestionContentDisplay {
+	padding : 0.3%;
+	font-size:13px;
+	width: 49%;
+	float: left;
+	text-align: left;
+}
+#progStatusDisplay {
+	overflow : auto;
+	font-size:0.9em;
+}
+#progResultDisplay {
+	overflow : auto;
+	padding : 1%;
+	font-size:13px;
+	margin-top:1%;
+	margin-bottom: 0.5%;
+	border-top: 1px solid #BDBDBD;
+	border-bottom: 1px solid #BDBDBD; 
+}
+#progDescriptionDiv {
+	width: 99.6%;
+	height: 28px;
+	text-align: left;
+	font-size: 13px;
+	font-weight: bold;
+	padding:0.2%;
+	border-bottom: 1px solid gray;
+	margin-bottom: 0.2%;
+}
+
+#progRightPart {
+	font-size: 0.9em;
+	text-align: left;
+	border-left: 1px solid #BDBDBD;
+	height: 100%;
+}
+#progDescriptionDiv1 {
+	width: 99.6%;
+	height: 28px;
+	text-align: left;
+	font-size: 13px;
+	font-weight: bold;
+	padding:0.2%;
+	border-bottom: 1px solid gray;
+	margin-bottom: 0.2%;
+}
+#progRightPart1 {
+	font-size: 0.9em;
+	text-align: left;
+	border-left: 1px solid #BDBDBD;
+	height: 100%;
+}
+#progContentDisplay {
+	padding : 1%;
+	overflow : auto;
+	margin-bottom: 1%;
+}
+.userInfo {
+	  background: url("../images/userdetails-bg-repeat.gif") repeat-x scroll 0 0 transparent;
+	  height:149px;
+}
+.userInfo .system_info {
+	background: url("../images/userdetails-bg-left.gif") no-repeat scroll 0 0 transparent;
+	height:149px;
+}
+.userInfo .system_info .system_name {
+	float:left;	
+}
+.userInfo .system_info .user_name {
+	float:right;
+	padding-right:10px;	
+}
+.name1 {
+	color: #FFFFFF;
+    font-size: 18px;
+    margin-left: 20px;
+    margin-top: 5px;
+    text-align: left;
+}
+.name2 {
+	color: #FFFFFF;
+    font-size: 18px;
+    margin-left: 20px;
+    margin-top: 10px;
+    text-align: right;
+}
+.details1 {
+	color:#fff200;
+	font-size:44px;
+	margin-left: 20px;
+	text-align: left;
+}
+.details2 {
+	color:#fff200;
+	font-size:34px;
+	margin-left: 5px;
+	text-align: right;
+}
+.details3 {
+	color:#fff200;
+	font-size:34px;
+	margin-left: 20px;
+	text-align: left;
+}
+.userInfo .system_info .user_pic {
+	width:137px;
+	float:right;
+	vertical-align:middle;
+	background:#fafbfc;
+	height:137px;
+	border-bottom:1px solid #e1eaf1;
+}
+.userInfo .user_pic img {
+	border:1px solid #000;
+	margin-top:20px;
+}
+
+.testCaseTable td {
+	text-align:center;word-wrap:break-word;vertical-align: middle !important;
+}
+.blueBtn {
+    background: url("../images/blue-btn-sprite.png") repeat-x scroll right -24px;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 5px 0 5px;
+	white-space:nowrap;
+}
+.blueBtn span {
+    background: url("../images/blue-btn-sprite.png") repeat-x scroll left 0;
+    display: inline-block;
+    height: 24px;
+    padding: 0 10px 0 15px;
+}
+
+/******** hint div css starts here ************/
+#hintIcon {
+	display:none;
+	cursor: pointer;
+	padding-left : 5px;
+}
+
+.popUpDiv {
+	-moz-user-select: text;
+    background-color: #FFFF99;
+    border: 1px solid #cc5200;
+    border-radius: 5px;
+    left: -48px;
+    position: absolute;
+    top: 22px;
+	min-width: 120px;
+    z-index: 4000;
+	box-shadow: 0 2px 4px #767676;
+}
+.popupHeader {
+	-moz-user-select: text;
+    background-color: #dd6320;
+	padding: 5px;
+	color: #fff;
+	font-weight: bold;
+}
+.popUpDiv .btnclose {
+    cursor: pointer;
+    float: right;
+}
+.popUpDiv .tip {
+    left: 2px;
+    position: absolute;
+    top: -13px;
+    width: 0;
+    height: 0;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    border-bottom: 13px solid #dd6320;
+}
+.text_popUp {
+    color: #2164a8;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 6px;
+}
+
+/********* hint div css ends here *************/

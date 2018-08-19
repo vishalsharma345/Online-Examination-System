@@ -1,0 +1,203 @@
+.pop-up-background {
+    background: rgb(0,0,0);
+    cursor: pointer;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+	filter: alpha(opacity:0.85);
+	opacity:0.85;
+	-moz-opacity:0.85;
+}
+
+.pop-up-background-modal {
+    cursor:default;
+}
+
+.pop-up {
+    visibility:hidden;
+    left: 50%;
+    margin-left: -400px;
+    max-width: 700px;
+    position: absolute;
+    top: 20px;
+    width: 90%;
+    z-index: 100;
+}
+
+.pop-up.small{
+    margin-left: -200px;
+    max-width: 400px;
+}
+
+.pop-up.medium{
+    margin-left: -300px;
+    max-width: 600px;
+}
+
+.pop-up.large{
+    margin-left: -350px;
+    max-width: 700px;
+}
+
+.pop-up-content {
+    background: #fff;
+    -webkit-box-shadow: 0px 1px 10px 2px #ccc;
+    -moz-box-shadow:    0px 1px 10px 2px #ccc;
+    box-shadow:         0px 1px 10px 2px #ccc;
+    min-height: 30px;
+    padding: 24px;
+}
+
+.pop-up-content .close,
+.pop-up-footer {
+    text-align: right;
+}
+
+.pop-up-footer {
+    padding-top: 24px;
+}
+
+.pop-up-body {
+    font-size: 16px;
+    color:#666;
+}
+
+.pop-up-display-content {
+    display: none;
+}
+
+.pop-up .close {
+    position:absolute;
+    top:10px;
+    right:10px;
+    z-index: 99;
+}
+
+.pop-up .close a{
+    font-size: 18px;
+    color: #d22;
+    width: 24px;
+    height: 24px;
+    background: url(icon-cross.png) no-repeat 0 0;
+    display: inline-block;
+}
+.pop-up .close a:hover{
+    opacity: 0.85;
+}
+
+.pop-up-btn {
+    padding: 8px 15px;
+    display: inline-block;
+    background: #3B4658;
+    border-radius: 3px;
+    margin-left: 10px;
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.pop-up-btn:hover,
+.pop-up-btn:focus {
+    background: #6A798E;
+}
+
+.pop-up .screen-reader-text {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+.ie6 .pop-up {
+    border: 10px solid #CED4E2;
+    width: 600px;
+}
+
+.pop-up-header{
+	background:rgb(114,166,251);color:#FFF;margin: -44px -25px;padding:0.5% 1.5% 0.75%;width:100.2%;position: absolute;
+}
+.pop-up-close-trigger {
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTRweCIgaGVpZ2h0PSIxNHB4IiB2aWV3Qm94PSIwIDAgMTQgMTQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDE0IDE0IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRkZGRkZGIiBkPSJNMC4wMTIsMS41NjVMNS40NDgsN2wtNS40MzYsNS40MzZsMS41NTMsMS41NTNMNyw4LjU1Mw0KCWw1LjQzNSw1LjQzNmwxLjU1My0xLjU1M0w4LjU1Myw3bDUuNDM2LTUuNDM1bC0xLjU1My0xLjU1M0w3LDUuNDQ4TDEuNTY1LDAuMDEyTDAuMDEyLDEuNTY1eiIvPg0KPC9zdmc+DQo=") !important;
+    position: absolute;
+    right: 0px;
+    top: -14px; width:14px !important; height:14px !important;
+}
+@media only screen and (min-width:1024px) {
+	.pop-up{
+		left: 50%;
+	}
+}
+
+@media only screen and (max-width:768px) {
+  .pop-up.large {
+    left: 12%;
+    margin: 12px;
+    width: 70%;
+}	
+.connected-carousels ul li img{
+	height:400px;
+	width:456px;
+}
+.connected-carousels .carousel-stage{
+     width: auto;
+}
+
+.pop-up-close-triggerfull {
+    display: none;
+}
+
+
+}
+
+@media only screen and (min-width:760px) {
+	.pop-up{
+		left: 51%;
+	}
+}
+
+@media only screen and (max-width:680px) {
+	.pop-up.large {
+    left: 13%;
+    margin: 12px;
+}
+	
+.connected-carousels ul li img{
+	height:400px !important;
+	width:350px !important;
+}
+.connected-carousels .carousel-stage{
+   width: auto;
+}
+}
+
+
+@media only screen and (max-width:480px) {
+    .pop-up.small,
+    .pop-up.medium {
+        left: 5%;
+        margin: 0;
+    }
+    .pop-up-content {
+        padding: 12px;
+    }
+    .pop-up-footer {
+        padding-top: 12px;
+    }
+    .pop-up-header{margin: -12px;
+    }
+    .pop-up-close-trigger{ top:7px;}
+
+.connected-carousels ul li img {
+    height: 400px !important;
+    width: auto !important;
+
+}
+.pop-up.large {
+    left: 9%;
+    margin: 12px;
+    width: 80%;
+}
+} 

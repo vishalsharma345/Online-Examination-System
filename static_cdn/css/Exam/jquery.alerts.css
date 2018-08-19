@@ -1,0 +1,192 @@
+#popup_container {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	min-width: 400px; /* Dialog will be no smaller than this */
+	max-width: 410px; /* Dialog will wrap after this width */
+	background: #FFF;
+	border: solid 5px #999;
+	color: #000;
+	z-index:1999;
+	position:absolute;
+	/*-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;*/
+}
+#popup_container.success {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	min-width: 400px; /* Dialog will be no smaller than this */
+	max-width: 410px; /* Dialog will wrap after this width */
+	border: solid 5px #C2DA9C;
+	color: #000;
+	/*-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;*/
+}
+#popup_container.info {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	min-width: 400px; /* Dialog will be no smaller than this */
+	max-width: 410px; /* Dialog will wrap after this width */
+	border: solid 5px #79a8c6;
+	color: #000;
+	/*-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;*/
+}
+
+#popup_container.warning {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	min-width: 400px; /* Dialog will be no smaller than this */
+	max-width: 410px; /* Dialog will wrap after this width */
+	border: solid 5px #E1CB76;
+	color: #000;
+	/*-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;*/
+}
+
+#popup_container.error {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	min-width: 400px; /* Dialog will be no smaller than this */
+	max-width: 410px; /* Dialog will wrap after this width */
+	border: solid 5px #F0B4B4;
+	color: #000;
+	/*-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;*/
+}
+
+
+#popup_title {
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1.75em;
+	color: #666;
+	background: #CCC url(../images/sprite.png) top repeat-x;
+	height:20px;
+	border: solid 1px #999;
+	cursor: default;
+	padding: 0em 0 0 10px;
+	margin: 0em;
+	text-align:center;
+}
+
+#popup_title.success {
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1.75em;
+	color: #666;
+	border:0px none;
+	background: #C2DA9C;
+	cursor: default;
+	text-align:center;
+	padding: 0em 0 0 10px;
+	margin: 0em;
+	height:20px;
+}
+#popup_title.info {
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1.75em;
+	color: #666;
+	border:0px none;
+	background: #79a8c6;
+	cursor: default;
+	text-align:center;
+	padding: 0em 0 0 10px;
+	margin: 0em;
+	height:20px;
+}
+
+#popup_title.warning {
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1.75em;
+	color: #666;
+	border:0px none;
+	background: #E1CB76;
+	cursor: default;
+	text-align:center;
+	padding: 0em 0 0 10px;
+	margin: 0em;
+	height:20px;
+}
+#popup_title.error {
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1.75em;
+	color: #666;
+	border:0px none;
+	background: #F0B4B4;
+	cursor: default;
+	text-align:center;
+	padding: 0em 0 0 10px;
+	margin: 0em;
+	height:20px;
+}
+
+#popup_content {
+	background: 16px 16px no-repeat url(../images/info.gif);
+	padding: 1em .75em 1em 1.75em;
+	margin: 0em;
+}
+
+#popup_content.info 
+{
+    /*color: #00529B;*/
+    background-color: #BDE5F8;    
+	background-image: url(../images/info.gif);
+}
+
+#popup_content.success 
+{
+    /*color: #4F8A10;*/
+    background-color: #F3FDE4;    
+	background-image: url(../images/success.gif);
+}
+
+#popup_content.warning
+{
+/*    color: #9F6000;*/
+    background-color: #FFF8DE;
+	background-image: url(../images/alert.gif);
+}
+
+#popup_content.error 
+{
+    /*color: #D8000C;*/
+    background-color: #FFEFEF;
+	background-image: url(../images/error.gif);
+}
+
+#popup_content.confirm 
+{        
+	background-image: url(../images/important.gif);
+}
+
+#popup_content.prompt 
+{ 
+	background-image: url(../images/help.gif);
+}
+
+#popup_message {
+	padding-left: 30px;
+	padding-top:10px;
+	padding-bottom:5px;
+}
+#popup_message p{margin:0; padding:0;}
+#popup_panel {
+	text-align: center;
+	margin: 1em 0em 0em 1em;
+}
+
+#popup_prompt {
+	margin: .5em 0em;
+}
+
+#popup_ok{ margin-right:10px;}
+
+.close{padding-top:3px;}

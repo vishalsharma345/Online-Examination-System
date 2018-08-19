@@ -1,0 +1,423 @@
+{% extends 'base.html' %}
+<html>
+<body>
+{% block name %}
+    {{ ur }}
+{% endblock %}
+{% block name1 %}
+    {{ ur }}
+{% endblock %}
+{% block content %}
+{% load static %}
+<script type="text/javascript" src="{% static 'js/report/studentTestReport.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/report/jquery.scrollTo.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/report/pop-upall.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'js/report/video.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/report/jwplayer.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/report/jwplayer.html5.js' %}"></script>
+
+<script src="{% static 'js/report/highChart.js' %}"></script>
+
+
+<div class="content">
+<div class="pagename">Demo Full Syllabus Test : CS - Reports</div>
+<div class="news-row news-rowmainpage" style="height: auto;max-height: 5000px !important">
+<div class="tabs">
+<ul>
+<li id="tab1" onclick="overallreport();" class="active">Overall Analysis</li>
+<li id="tab2" onclick="comparereport();">Comparison Report</li>
+<li id="tab3" onclick="solutionreport();">Solution Report</li>
+</ul>
+</div>
+<div id="overallreport">
+<div class="overviewblock_outr">
+<div class="overviewblock_main">
+<div class="grayinfo">Score</div>
+<div class="score_count">-1.65/100 </div>
+<div class="overviewbar"><span style="width:0%"></span></div>
+</div>
+<div class="overviewblock_main overvieworange">
+<div class="grayinfo">Question Attempted</div>
+<div class="score_count">5/65 </div>
+<div class="overviewbar"><span style="width:7.6923076923077%"></span></div>
+</div>
+<div class="overviewblock_main overviewgreen">
+<div class="grayinfo">Time Taken</div>
+<div class="score_count">00:13:02/03:00:00 </div>
+<div class="overviewbar"><span style="width:7.2407407407407%"></span></div>
+</div>
+<div class="overviewblock_main overviewred">
+<div class="grayinfo">Rank</div>
+<div class="score_count">1306/1401</div>
+<div class="overviewbar"><span style="width:93.219129193433%"></span></div>
+</div>
+<div class="overviewblock_main">
+<div class="grayinfo">Percentage</div>
+<div class="score_count">0% </div>
+<div class="overviewbar"><span style="width:-1.65%"></span></div>
+</div>
+</div>
+<div class="overviewblock_outr">
+<div class="overanalysis_blockbig">
+<div class="overall_inrdiv">
+<span class="Report_heading">Marks Distribution</span>
+<div id="" class="mark-distribution" style="min-width: 250px; height: 230px; max-width: 250px;">
+<ul>
+<li>
+<img src="{% static 'image/image1/correct.png' %}">
+<span><strong>0</strong><p>positive marks</p></span>
+<div style="clear:both"></div>
+</li>
+<li>
+<img src="{% static 'image/image1/negative.png' %}">
+<span><strong>-1.65</strong><p>Negative marks</p></span>
+<div style="clear:both"></div>
+</li>
+<li>
+<img src="{% static 'image/image1/skip.png' %}">
+<span><strong>95</strong><p>Left marks</p></span>
+<div style="clear:both"></div>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+<div class="overanalysis_blockbig">
+<div class="overall_inrdiv">
+<span class="Report_heading">Time Wise</span>
+<div id="timewise" style="min-width: 250px; height: 230px; max-width: 250px; margin: 0 auto" data-highcharts-chart="1"><div class="highcharts-container" id="highcharts-2" style="position: relative; overflow: hidden; width: 161px; height: 230px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="161" height="230"><desc>Created with Highcharts 4.2.5</desc><defs><clipPath id="highcharts-3"><rect x="0" y="0" width="141" height="128"></rect></clipPath></defs><rect x="0" y="0" width="161" height="230" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-series-group"><g class="highcharts-series highcharts-series-0 highcharts-tracker" transform="translate(10,10) scale(1 1)" style="cursor:pointer;"><path fill="#FFBC3F" d="M 70.4912420522411 21.00000089187965 A 43 43 0 0 1 112.05476905978406 75.05446373136267 L 87.12190762391363 68.42178549254507 A 17.2 17.2 0 0 0 70.49649682089644 46.80000035675186 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path><path fill="#78D489" d="M 112.04369382051232 75.09601296626525 A 43 43 0 0 1 112.05476905978406 75.05446373136267 L 87.12190762391363 68.42178549254507 A 17.2 17.2 0 0 0 87.11747752820493 68.4384051865061 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path><path fill="#FF836C" d="M 112.04369382051232 75.09601296626525 A 43 43 0 1 1 70.44027386266292 21.000041479223277 L 70.47610954506517 46.800016591689314 A 17.2 17.2 0 1 0 87.11747752820493 68.4384051865061 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path></g><g class="highcharts-markers highcharts-series-0" transform="translate(10,10) scale(1 1)"></g></g><g class="highcharts-legend" transform="translate(21,150)"><g><g><g class="highcharts-legend-item" transform="translate(8,3)"><text x="21" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start" y="15">Skipped</text><rect x="0" y="4" width="16" height="12" fill="#FFBC3F"></rect></g><g class="highcharts-legend-item" transform="translate(8,21)"><text x="21" y="15" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start">Productive</text><rect x="0" y="4" width="16" height="12" fill="#78D489"></rect></g><g class="highcharts-legend-item" transform="translate(8,39)"><text x="21" y="15" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start">Unproductive</text><rect x="0" y="4" width="16" height="12" fill="#FF836C"></rect></g></g></g></g><g class="highcharts-tooltip" style="cursor:default;padding:0;pointer-events:none;white-space:nowrap;" transform="translate(0,-9999)"><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.049999999999999996" stroke-width="5" transform="translate(1, 1)"></path><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.09999999999999999" stroke-width="3" transform="translate(1, 1)"></path><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.15" stroke-width="1" transform="translate(1, 1)"></path><path fill="rgba(249, 249, 249, .85)" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5"></path><text x="8" style="font-size:12px;color:#333333;fill:#333333;" y="20"></text></g><text x="151" text-anchor="end" style="cursor:pointer;color:#909090;font-size:9px;fill:#909090;" y="225"></text></svg></div></div>
+</div>
+
+</div>
+<div class="overanalysis_blockbig">
+<div class="overall_inrdiv">
+<span class="Report_heading">Difficulty Level Accuracy</span>
+<div id="difficultywise" style="min-width: 250px; height: 230px; max-width: 250px; margin: 0 auto" data-highcharts-chart="2"><div class="highcharts-container" id="highcharts-4" style="position: relative; overflow: hidden; width: 161px; height: 230px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="161" height="230"><desc>Created with Highcharts 4.2.5</desc><defs><clipPath id="highcharts-5"><rect x="0" y="0" width="141" height="128"></rect></clipPath></defs><rect x="0" y="0" width="161" height="230" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-series-group"><g class="highcharts-series highcharts-series-0 highcharts-tracker" transform="translate(10,10) scale(1 1)" style="cursor:pointer;"><path fill="#FFBC3F" d="M 70.4912420522411 21.00000089187965 A 43 43 0 0 1 70.44824206467864 21.000031149823705 L 70.47929682587146 46.800012459929484 A 17.2 17.2 0 0 0 70.49649682089644 46.80000035675186 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path><path fill="#78D489" d="M 70.4912420522411 21.00000089187965 A 43 43 0 0 1 78.73897878401992 21.796691733982875 L 73.79559151360797 47.11867669359315 A 17.2 17.2 0 0 0 70.49649682089644 46.80000035675186 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path><path fill="#FF836C" d="M 78.781177965763 21.804951813046102 A 43 43 0 1 1 70.44027386266292 21.000041479223277 L 70.47610954506517 46.800016591689314 A 17.2 17.2 0 1 0 73.8124711863052 47.12198072521844 Z" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" transform="translate(0,0)"></path></g><g class="highcharts-markers highcharts-series-0" transform="translate(10,10) scale(1 1)"></g></g><g class="highcharts-legend" transform="translate(37,150)"><g><g><g class="highcharts-legend-item" transform="translate(8,3)"><text x="21" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start" y="15">Easy</text><rect x="0" y="4" width="16" height="12" fill="#FFBC3F"></rect></g><g class="highcharts-legend-item" transform="translate(8,21)"><text x="21" y="15" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start">Medium</text><rect x="0" y="4" width="16" height="12" fill="#78D489"></rect></g><g class="highcharts-legend-item" transform="translate(8,39)"><text x="21" y="15" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start">Difficult</text><rect x="0" y="4" width="16" height="12" fill="#FF836C"></rect></g></g></g></g><g class="highcharts-tooltip" style="cursor:default;padding:0;pointer-events:none;white-space:nowrap;" transform="translate(0,-9999)"><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.049999999999999996" stroke-width="5" transform="translate(1, 1)"></path><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.09999999999999999" stroke-width="3" transform="translate(1, 1)"></path><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.15" stroke-width="1" transform="translate(1, 1)"></path><path fill="rgba(249, 249, 249, .85)" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5"></path><text x="8" style="font-size:12px;color:#333333;fill:#333333;" y="20"></text></g><text x="151" text-anchor="end" style="cursor:pointer;color:#909090;font-size:9px;fill:#909090;" y="225"></text></svg></div></div>
+</div>
+
+</div>
+</div>
+<div class="overanalysis_reporting">
+<div class="overall_inrdiv">
+<span class="Report_heading">Section Wise</span>
+<div id="Sectionwise" style="min-width: 310px; max-width: 800px; height: 250px; margin: 10px auto 0" data-highcharts-chart="0"><div class="highcharts-container" id="highcharts-0" style="position: relative; overflow: hidden; width: 571px; height: 250px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="571" height="250"><desc>Created with Highcharts 4.2.5</desc><defs><clipPath id="highcharts-1"><rect x="0" y="0" width="200" height="446"></rect></clipPath></defs><rect x="0" y="0" width="571" height="250" fill="#FFFFFF" class=" highcharts-background"></rect><g class="highcharts-grid"></g><g class="highcharts-grid"><path fill="none" d="M 305.5 10 L 305.5 210" stroke="#D8D8D8" stroke-width="1" opacity="1"></path><path fill="none" d="M 561.5 10 L 561.5 210" stroke="#D8D8D8" stroke-width="1" opacity="1"></path><path fill="none" d="M 114.5 10 L 114.5 210" stroke="#D8D8D8" stroke-width="1" opacity="1"></path><path fill="none" d="M 178.5 10 L 178.5 210" stroke="#D8D8D8" stroke-width="1" opacity="1"></path><path fill="none" d="M 241.5 10 L 241.5 210" stroke="#D8D8D8" stroke-width="1" opacity="1"></path><path fill="none" d="M 369.5 10 L 369.5 210" stroke="#D8D8D8" stroke-width="1" opacity="1"></path><path fill="none" d="M 433.5 10 L 433.5 210" stroke="#D8D8D8" stroke-width="1" opacity="1"></path><path fill="none" d="M 496.5 10 L 496.5 210" stroke="#D8D8D8" stroke-width="1" opacity="1"></path></g><g class="highcharts-axis"><path fill="none" d="M 115 110.5 L 105 110.5" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 115 9.5 L 105 9.5" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 115 210.5 L 105 210.5" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 114.5 10 L 114.5 210" stroke="#C0D0E0" stroke-width="1"></path></g><g class="highcharts-axis"></g><g class="highcharts-series-group"><g class="highcharts-series highcharts-series-0 highcharts-tracker" transform="translate(561,210) rotate(90) scale(-1,1) scale(1 1)" style="" width="446" height="200" clip-path="url(#highcharts-1)"><rect x="34.5" y="-0.5" width="30" height="422" stroke="#FFFFFF" stroke-width="1" fill="#FFBC3F" rx="0" ry="0"></rect><rect x="134.5" y="0.5" width="30" height="0" stroke="#FFFFFF" stroke-width="1" fill="#78D489" rx="0" ry="0"></rect></g><g class="highcharts-markers highcharts-series-0" transform="translate(561,210) rotate(90) scale(-1,1) scale(1 1)" width="446" height="200" clip-path="none"></g></g><g class="highcharts-legend"><g><g></g></g></g><g class="highcharts-axis-labels highcharts-xaxis-labels"><text x="100" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:178px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="163" opacity="1">Technical</text><text x="100" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:178px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="63" opacity="1"><tspan>General Aptitude</tspan></text></g><g class="highcharts-axis-labels highcharts-yaxis-labels"><text x="306.1428571428571" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:63.714285714285715;text-overflow:ellipsis;" text-anchor="middle" transform="translate(0,0)" y="229" opacity="1"><tspan>-1</tspan></text><text x="557.5" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:31.857142857142858;text-overflow:ellipsis;" text-anchor="middle" transform="translate(0,0)" y="229" opacity="1"><tspan>0</tspan></text><text x="115" style="color:#606060;cursor:default;font-size:11px;fill:#606060;" text-anchor="middle" transform="translate(0,0)" y="229" opacity="1">-1.75</text><text x="178.71428571428572" style="color:#606060;cursor:default;font-size:11px;fill:#606060;" text-anchor="middle" transform="translate(0,0)" y="229" opacity="1">-1.5</text><text x="242.42857142857144" style="color:#606060;cursor:default;font-size:11px;fill:#606060;" text-anchor="middle" transform="translate(0,0)" y="229" opacity="1">-1.25</text><text x="369.8571428571429" style="color:#606060;cursor:default;font-size:11px;fill:#606060;" text-anchor="middle" transform="translate(0,0)" y="229" opacity="1">-0.75</text><text x="433.57142857142856" style="color:#606060;cursor:default;font-size:11px;fill:#606060;" text-anchor="middle" transform="translate(0,0)" y="229" opacity="1">-0.5</text><text x="497.2857142857143" style="color:#606060;cursor:default;font-size:11px;fill:#606060;" text-anchor="middle" transform="translate(0,0)" y="229" opacity="1">-0.25</text></g><g class="highcharts-tooltip" style="cursor:default;padding:0;pointer-events:none;white-space:nowrap;" transform="translate(0,-9999)"><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.049999999999999996" stroke-width="5" transform="translate(1, 1)"></path><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.09999999999999999" stroke-width="3" transform="translate(1, 1)"></path><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.15" stroke-width="1" transform="translate(1, 1)"></path><path fill="rgba(249, 249, 249, .85)" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5"></path><text x="8" style="font-size:12px;color:#333333;fill:#333333;" y="20"></text></g><text x="561" text-anchor="end" style="cursor:pointer;color:#909090;font-size:9px;fill:#909090;" y="245"></text></svg></div></div>
+</div>
+
+</div>
+<script>
+    //$total_count <= 0
+    $(document).ready(function () {
+
+        Highcharts.chart('Sectionwise', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: ''
+            },
+//            xAxis: {
+//              //  categories: ['Technical', 'General Aptitude']
+//                categories: //            }
+            xAxis: [{
+                categories: ["Technical","General Aptitude"],
+           //  categories: ['Technical', 'General Aptitude'],
+                reversed: false,
+                labels: {
+                    step: 1
+                }
+            }]
+                    ,
+                    yAxis: {
+                    title: {
+                        text: null
+                    },
+                    labels: {
+                        formatter: function () {
+                            return this.value ;
+                           // return 300;
+                        }
+                    }
+                },
+                plotOptions: {
+                    series: {
+                        stacking: 'normal',
+                        pointWidth: 30
+                    }
+                },
+                 tooltip: {
+                    formatter: function () {
+                        return  this.point.category + '</b><br/>' +
+                           //  Highcharts.numberFormat(Math.abs(this.point.y), 0);
+                             Highcharts.numberFormat(this.point.y);
+                    }
+                },
+//                legend: {
+//                reversed: true
+//                }
+//            yAxis: {
+//                min: 0
+//            },
+//            tooltip: {
+//                pointFormat: '{series.name}: <b>{point.y}%</b>'
+//            },
+//            legend: {
+//                reversed: true
+//            },
+//            plotOptions: {
+//                series: {
+//                    stacking: 'normal',
+//                    pointWidth: 30
+//                }
+//            },
+//            series: [{
+//                name: 'Technical',
+//                data: [40, 0],
+//                color:'#78d489'
+//            }, {
+//                name: 'General Aptitude',
+//                data: [0, 80],
+//                color: '#ffbc3f'
+//            },
+//            {
+//                name: 'General English',
+//                data: [50,0],
+//                color: '#ffbc3f'
+//            }
+//            ]
+             series: [{
+                showInLegend: false,
+                 data:[{y:-1.65,color:"#FFBC3F"},{y:0,color:"#78D489"}]
+              }]
+                     //  series:
+        });
+
+        // Build the chart
+        Highcharts.chart('timewise', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: ''
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: false,
+                    cursor: 'pointer',
+                    size: '75%',
+                    innerSize: '40%',
+                    dataLabels: {
+                        enabled: false,
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                    name: 'Time',
+                    colorByPoint: true,
+                    data: [{
+                            name: 'Skipped',
+                            y: 29.156010230179,
+                            color: '#FFBC3F'
+                        }, {
+                            name: 'Productive',
+                            y: 0,
+                            color: '#78D489'
+                        }, {
+                            name: 'Unproductive',
+                            y: 70.843989769821,
+                            color: '#FF836C'
+
+                        }]
+                }]
+        });  // Build the chart
+        Highcharts.chart('difficultywise', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+
+            },
+            title: {
+                text: ''
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: false,
+                    cursor: 'pointer',
+                    size: '75%',
+                    innerSize: '40%',
+                    dataLabels: {
+                        enabled: false,
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                    name: 'Level',
+                    colorByPoint: true,
+                    data: [{
+                            name: 'Easy',
+                            y: 0,
+                            color: '#FFBC3F'
+                        }, {
+                            name: 'Medium',
+                            y: 3.0769230769231,
+                            color: '#78D489'
+
+                        }, {
+                            name: 'Difficult',
+                            y: 96.923076923077,
+                            color: '#FF836C'
+                        }]
+                }]
+        });
+    });
+</script></div>
+<div id="comparisionreport" style="display: none;"></div>
+<div id="solutionreport" style="display: none;"></div>
+</div>
+</div>
+<script>
+    function overallreport() {
+
+        var testId= "7";
+        var urlData = "testid=" + testId;
+        $.ajax({
+           'url': 'index.php?pageName=reports/overallanalysis',
+           'method': 'post',
+           'data': urlData,
+          // 'async': false,
+           beforeSend: function () { showLoader(); },
+           success: function(response){
+               hideLoader();
+               $("#overallreport").html(response);
+           },
+           complete:function()
+           {
+               hideLoader();
+           },
+           error: function(response){
+               console.log(response);
+           }
+
+        });
+        $("#overallreport").show();
+        $("#comparisionreport").hide();
+        $("#solutionreport").hide();
+       // hideLoader();
+        $("#tab1").addClass('active');
+        $("#tab2").removeClass('active');
+        $("#tab3").removeClass('active');
+    }
+    function comparereport() {
+         //  $("#preloader1").show();
+        var testId= "7";
+        var urlData = "testid=" + testId;
+        $.ajax({
+           'url': 'index.php?pageName=reports/comparisionreport',
+           'method': 'post',
+           'data': urlData,
+           //'async': false,
+
+          beforeSend: function () { showLoader(); },
+           success: function(response){
+               hideLoader();
+               $("#comparisionreport").html(response);
+              // $("#preloader11").hide();
+
+           }
+           ,complete:function()
+           {
+               hideLoader();
+           },
+           error: function(response){
+               console.log(response);
+           }
+
+        });
+        $("#overallreport").hide();
+        $("#comparisionreport").show();
+        $("#solutionreport").hide();
+        //$("#preloader11").hide();
+       // hideLoader();
+        $("#tab1").removeClass('active');
+        $("#tab2").addClass('active');
+        $("#tab3").removeClass('active');
+    }
+    function solutionreport() {
+       // $("#preloader1").show();
+       showLoader();
+        var testId= "7";
+        var urlData = "testid=" + testId;
+        $.ajax({
+           'url': 'index.php?pageName=reports/solutionreport',
+           'method': 'post',
+           'data': urlData,
+           //'async': false,
+          beforeSend: function () { showLoader(); },
+           success: function(response){
+               hideLoader();
+               $("#solutionreport").html(response);
+
+           }
+           ,complete:function()
+           {
+               hideLoader();
+           },
+           error: function(response){
+               console.log(response);
+           }
+        });
+        $("#overallreport").hide();
+        $("#comparisionreport").hide();
+        $("#solutionreport").show();
+        //$("#preloader11").hide();
+
+        $("#tab1").removeClass('active');
+        $("#tab2").removeClass('active');
+        $("#tab3").addClass('active');
+    }
+
+    overallreport();
+
+    function showLoader()
+    {
+       //  $("#preloader1").css("display", "");
+         $("#preloader1").show();
+
+    }
+    function hideLoader()
+    {
+        // setTimeout(function () {
+      //  $("#preloader1").css("display", "none");
+        $("#preloader1").hide();
+      // }, 2000);
+
+    }
+//      $('#preloader1').bind('ajaxStart', function(){
+//            $(this).show();
+//        }).bind('ajaxStop', function(){
+//            $(this).hide();
+//        });
+//
+//
+//      $(document).ajaxStart(function () {
+//        showLoader();
+//      }).ajaxStop(function () {
+//        hideLoader();
+//      });
+</script>
+{% endblock %}
+</body></html>
